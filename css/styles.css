@@ -2,4 +2,45 @@ body {
     font-family: 'Helvetica', sans-serif;
     color: blue;
     background-color: rgba(229, 229, 229, 1);
+    
+}
+/**
+Imagem inicial na tela de login
+*/
+#imagem-dog{  
+    border:solid 1px;
+    border-radius: 2px;
+    
+    float: left;
+}
+
+/**
+toda borda e posição do conjunto login
+*/
+#login-senha{
+    border:solid 1px;
+    border-radius: 2px;
+    float: right;
+
+}
+
+/**
+Hotel Pet no login
+*/
+h1{
+    padding: 0px 1px 1px 50px ;
+}
+/**
+caixa de login no login
+*/
+#caixa-login{
+    padding: 80px  83px 20px 1px ;
+
+}
+/**
+caixa de senha no login
+*/
+#caixa-senha{
+    padding: 80px 3px 47px 1px ;
+
 }
