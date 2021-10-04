@@ -1,46 +1,89 @@
-body {
+body{
     font-family: 'Helvetica', sans-serif;
     color: blue;
-    background-color: rgba(229, 229, 229, 1);
-    
+    background: #FFFFFF;
 }
-/**
-Imagem inicial na tela de login
-*/
-#imagem-dog{  
-    border:solid 1px;
-    border-radius: 2px;
+
+#imagem-dog{ /**Imagem inicial na tela de login*/
     
+    border: 2px solid #E5E5E5;
+    position: absolute;
     float: left;
 }
 
-/**
-toda borda e posição do conjunto login
-*/
-#login-senha{
-    border:solid 1px;
-    border-radius: 2px;
+#login-senha{/**toda borda e posição do conjunto login*/
+    width: 482px;
+    height: 864px;
+    padding-left: 45px;
+    background-color: #E5E5E5;
+    
     float: right;
 
 }
 
-/**
-Hotel Pet no login
-*/
-h1{
-    padding: 0px 1px 1px 50px ;
+
+h1{/** texto Hotel Pet no login*/
+    
+    font-size: 40px;
+    font-weight: bold;
+    padding: 84px 1px 1px 130px ;
 }
-/**
-caixa de login no login
-*/
-#caixa-login{
-    padding: 80px  83px 20px 1px ;
+
+#caixa-login{/** posição caixa de login no login*/
+    padding: 130px  1px 20px 10px ;
 
 }
-/**
-caixa de senha no login
-*/
-#caixa-senha{
-    padding: 80px 3px 47px 1px ;
+
+#caixa-login input{/**tamanho caixa de login no login*/
+    
+    padding-top: 20px;
+    padding-right: 225px ; 
+    font-size: 16px;
+    background-color:#FFFFFF ;
+    border:2px solid #AAAAAA;
+    border-radius: 4px;
+    
+}
+
+#caixa-senha{/** posição caixa de senha no login*/
+
+    padding: 73px 1px 47px 10px;
+
+}
+#caixa-senha input{/**tamanho caixa de senha no login*/
+    
+    
+    padding-top: 20px;
+    padding-right: 225px ; 
+    font-size: 16px;
+    background-color:#FFFFFF ;
+    border:2px solid #AAAAAA;
+    border-radius: 4px;
+ 
+}
+
+#caixa-criar-conta{
+    
+    padding: 40px 1px 40px 10px ;
+
+}
+
+#caixa-criar-conta input{
+
+    
+    padding-top: 20px;
+    padding-right: 335px ;
+    color: #FFFFFF;
+    background: #074EE8;
+    font-size: 16px;
+    border: 2px solid #074EE8;
+    border-radius: 4px;
+   
+    
+}
+
+#link-login{
+
+    padding: 40px 0px 0px 130px;
 
 }
