@@ -1,89 +1,77 @@
-body{
-    font-family: 'Helvetica', sans-serif;
-    color: blue;
-    background: #FFFFFF;
+.container{
+    background-color: #fff;
+    display: flex;
+    width: 100%;
+    height: 100%;
+
 }
 
-#imagem-dog{ /**Imagem inicial na tela de login*/
-    
-    border: 2px solid #E5E5E5;
-    position: absolute;
-    float: left;
+h1{
+    text-align: center;
+    color: #074EE8;
 }
 
-#login-senha{/**toda borda e posição do conjunto login*/
-    width: 482px;
-    height: 864px;
-    padding-left: 45px;
+.container-lado-esquerdo{
+
+    border: solid #E5E5E5;
+    width: 1000px; 
+    height: 860px; 
+
+}
+
+.container-lado-direito{
+
     background-color: #E5E5E5;
-    
-    float: right;
-
-}
-
-
-h1{/** texto Hotel Pet no login*/
-    
-    font-size: 40px;
-    font-weight: bold;
-    padding: 84px 1px 1px 130px ;
-}
-
-#caixa-login{/** posição caixa de login no login*/
-    padding: 130px  1px 20px 10px ;
-
-}
-
-#caixa-login input{/**tamanho caixa de login no login*/
-    
-    padding-top: 20px;
-    padding-right: 225px ; 
-    font-size: 16px;
-    background-color:#FFFFFF ;
-    border:2px solid #AAAAAA;
-    border-radius: 4px;
-    
-}
-
-#caixa-senha{/** posição caixa de senha no login*/
-
-    padding: 73px 1px 47px 10px;
-
-}
-#caixa-senha input{/**tamanho caixa de senha no login*/
-    
-    
-    padding-top: 20px;
-    padding-right: 225px ; 
-    font-size: 16px;
-    background-color:#FFFFFF ;
-    border:2px solid #AAAAAA;
-    border-radius: 4px;
- 
-}
-
-#caixa-criar-conta{
-    
-    padding: 40px 1px 40px 10px ;
-
-}
-
-#caixa-criar-conta input{
-
-    
-    padding-top: 20px;
-    padding-right: 335px ;
-    color: #FFFFFF;
-    background: #074EE8;
-    font-size: 16px;
-    border: 2px solid #074EE8;
-    border-radius: 4px;
+    border: solid #E5E5E5;
+    margin-left: 1%;
    
     
+
 }
 
-#link-login{
+.login-senha-enviar{
+    
+    width: 30%;
+    height: 15%;
+    
+}
+#login-newsletter{
+    
+    border: 2px solid #aaaaaa;
+    border-radius: 4px;
+    width: 250%;
+    height: 25%;
+    margin: 50%;
+   
 
-    padding: 40px 0px 0px 130px;
+}
+#field-password{
+    border: 2px solid #aaaaaa;
+    border-radius: 4px;
+    width: 250%;
+    height: 25%;
+    margin: 50%;
+}
+#esqueceu-senha{
 
+text-align: end;
+
+}
+
+#botao-enviar{
+    
+    width: 250%;
+    height: 25%;
+    margin: 50%;
+    color:#fff;
+    background-color: blue;
+    border-radius: 4px;
+}
+
+.links-container{
+    text-align: center;
+
+}
+#criar-conta{
+    text-align:right;
 }

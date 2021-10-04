@@ -1,46 +1,59 @@
 <!DOCTYPE html>
 <html lang="pt-br">
 
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Hotel Pet</title>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Hotel Pet</title>
 
-    <link rel="stylesheet" href="./css/stylesLogin.css">
-</head>
+        <link rel="stylesheet" href="./css/stylesLogin.css">
+    </head>
 
-<body>
-    <div id="imagem-dog">
-        <img src="imagens/pet-shop-login.jpg" alt="Imagem de login" width="960" height="860" >
-    </div>
-
-    <div id="login-senha">
-
-        <div id="hotel-pet">
-            <h1>Hotel Pet</h1>
-        </div>
-
-        <div id="caixa-login">
-            <input id="login-newsletter" name="login-newsletter" type="login" class="form-newsletter__campo" placeholder="Login">
-        </div>
+    <body>
     
-        <div id="caixa-senha">
-            <input type= "password" id="senha-newsletter" name="senha-newsletter" type="senha" class="form-newsletter__campo" placeholder="Senha">
-            <span toggle="#password-field" class="fa fa-fw fa-eye field-icon toggle-password"></span>
+        <div class="container">
+
+            <div class="container-lado-esquerdo">
+                <img src="imagens/pet-shop-login.jpg" alt="Imagem de login" width="960" height="860" >
+            </div>
+
+            <div class="container-lado-direito">
+                <h1>Hotel Pet</h1>
+
+                <div class="login-senha-enviar">
+                    
+                    <input id="login-newsletter" name="login-newsletter" type="login" class="form-newsletter__campo" placeholder="Login">        
+                    <input type="Senha" id="field-password" class="field-password" placeholder="Senha">
+                       <input type="checkbox" id="manter-conectado">
+                            <span>Mantenha-me conectado</span>
+                        <div id="esqueceu-senha">
+                            <a href="#"> Esqueceu sua senha?</a>
+                        </div>
+                        
+                            <button id="botao-enviar">Enviar</button>
+
+                            <section class="links-container">
+                                <span> ou </span>
+                                <aside>
+            
+                                    <a href="#"><i class="fab fa-facebook-square facebook"></i></a>
+                                    <a href="#"><i class="fab fa-google-plus-square google"></i></a>
+            
+                                </aside>
+                               
+            
+                            </section>
+                            <div id="criar-conta">
+                                <a href="#"> Criar uma conta</a>
+                            </div>
+                            
+                    
+                </div>
+            
+                
+            </div>
         </div>
 
-        <div id="caixa-criar-conta">
-            <input type="button" value="Criar conta">
-        </div>
-
-    <div id="link-login">
-        <a href="#"> Já tem conta?Login</a>
-    </div>
-        
-
-    
-    </div>   
-   
-</body>
+    </body>
 
 </html>
