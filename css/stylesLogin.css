@@ -6,72 +6,124 @@
 
 }
 
+
 h1{
     text-align: center;
+    margin-top: 12%;
+    margin-bottom: 25%;
     color: #074EE8;
 }
 
+
 .container-lado-esquerdo{
-
     border: solid #E5E5E5;
-    width: 1000px; 
-    height: 860px; 
-
 }
-
 .container-lado-direito{
-
     background-color: #E5E5E5;
     border: solid #E5E5E5;
     margin-left: 1%;
-   
+    width: 28%;
+    height: 80%;
+    display: inline;
+    margin-left: 5%;
     
 
 }
 
 .login-senha-enviar{
+    display: inline;
+   
     
-    width: 30%;
-    height: 15%;
     
 }
 #login-newsletter{
     
     border: 2px solid #aaaaaa;
     border-radius: 4px;
-    width: 250%;
-    height: 25%;
-    margin: 50%;
+    width: 88%;
+    height: 6%;
+    margin-left: 6%;
+    margin-bottom: 13%;
    
 
 }
 #field-password{
     border: 2px solid #aaaaaa;
     border-radius: 4px;
-    width: 250%;
-    height: 25%;
-    margin: 50%;
+    width: 88%;
+    height: 4%;
+    margin-left: 6%;
+    margin-bottom: 12%;
+}
+
+#manter-conectado{
+    
+    margin-left: 7%;
+
 }
 #esqueceu-senha{
-
-text-align: end;
+    
+    display: inline;
+    margin-left: 12%;
+    margin-bottom: 40%;
+    
 
 }
 
 #botao-enviar{
     
-    width: 250%;
-    height: 25%;
-    margin: 50%;
+    
+    width: 88%;
+    height: 6%;
+    margin-left: 6%;
+    margin-top: 20%;
+    margin-bottom: 10%;
     color:#fff;
-    background-color: blue;
+    background-color: #074EE8;
+    border: solid #074EE8;
     border-radius: 4px;
+}
+#ou{
+    margin-left: 49%;
+    margin-bottom: 12%;
 }
 
 .links-container{
-    text-align: center;
-
+    margin-top: 12%;
+    margin-left: 20%;
+    margin-bottom: 19%;
+    
 }
+.btn {
+    margin-left: 3%;
+
+    padding: 4% 4% 4% 4%;
+    border: none;
+    border-radius: 4px;
+    display: inline;
+    font-size: 90%;
+    
+    text-decoration: none; /* remove underline from anchors */
+  }
+.fb{
+    
+    background-color: #3B5998;
+    color: white;
+}
+  
+.twitter{
+    background-color: #55ACEE;
+    color: white;
+}
+  
+.google{
+    background-color: #dd4b39;
+    color: white;
+}
+
+
 #criar-conta{
-    text-align:right;
+    display: inline;
+    padding-top: 20%;
+    margin-left: 40%;
 }
