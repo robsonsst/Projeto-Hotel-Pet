@@ -4,22 +4,18 @@
     box-sizing: border-box;
     text-decoration: none;
 }
+body{
+    background-color:  #fffafa;
+}
 
 div{
     border: solid;
     margin: 1%;
 }
 
-.container{
-
-    display: flex;
-    width: 100%;
+.painel-lado-esquerdo{
+    width: 25%;
     height: 100%;
-
-}
-
-div .container-colum{
-    display: inline-block;
 }
 
 div .div-bar-usuario{

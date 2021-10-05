@@ -17,109 +17,115 @@
     </head>
 
     <body>
-        <div class="container">
-
-            <div class="container-colum div-lado-direito">
+        <div class="container grid">
+            <div class="row">
+                <div class=" painel-lado-esquerdo col-sm-4 d-flex justify-content-between flex-column bd-highlight mb-2">
                 
-            
-                <h2>HOTEL PET</h2>
-
-                <button>Pet</button>
-                <button>Usuário</button>
-                <button>Reservas</button>
-
-            </div>
-            <div class="container-colum div-lado-esquerdo">
-                
-                <div class="div-bar-usuario-nome">
-                        
-                    <a class="nome-usuario"> <i class="fas fa-user-circle"></i> Joao da silva</a>
-
-                </div>
-               
-                <hr>
-                <div>
-                    <div> <!-- div que contem o titulo home e os botoes de novo remover e mudar o status -->
-                        
-                        <div>
-                            <h4> Home/Usuários</h4>
-                        </div>
-
-                        <div>
-                            <section>
-                            <h3> Usuário </h3>
-                            </section>
-
-                            <section>
-                                <button><i class="fas fa-user-plus"></i> Novo</button>
-                                <button> <i class="fas fa-user-minus"></i> Remover</button>
-                                <button><i class="fas fa-check"></i> Mudar Status</button>
-                            </section>
-
-                            <section>
-                                <a>Visualizar Por:</a>
-
-                                <button>Usuário</button>
-                                <button>Função</button>
-
-                            </section>
-                        </div>
-                        
-
-                    </div>
-
-                    <div> <!-- div que contem os inputs -->
-                        
-                        <section>
-                            <input placeholder="ID">
-    
-                            <label>Criado em:
-                                <input type="date" >
-                            </label>
-                               
-                            <input type="date" >
-    
-                        </section>
-    
-                        <section>
-                            <input type="email" placeholder="exemple@gmail.com">
-                            <input type="" placeholder="João da silva">
-                        </section>
-    
-                        <section>
-                            <label>Status:
-                                <input placeholder="Ativo" id="status">
-                            </label>
-                                
-    
-                            <input placeholder="Função">
-                        </section>
-
-                        <div>
-
-                            <button><i class="fas fa-search"></i> Pesquisar</button>
-                            <button> <i class="fas fa-redo"></i> Limpar</button>
-    
-                        </div>
-
-                    </div>
-
-                    <div> <!-- div que contem a barra de navegação e vai mostra -->
-
-                        <nav class="nav nav-pills flex-column flex-sm-row">
-                            
-                            <a class="flex-sm-fill text-sm-center nav-link" href="#"> <i class="fas fa-user-circle"></i> Foto </a>
-                            <a class="flex-sm-fill text-sm-center nav-link" href="#">E-mail <i class="fas fa-arrow-down"></i></a>
-                            <a class="flex-sm-fill text-sm-center nav-link" href="#">Nome <i class="fas fa-arrow-down"></i></a>
-                            <a class="flex-sm-fill text-sm-center nav-link" href="#">Função <i class="fas fa-arrow-down"></i></a>
-                            <a class="flex-sm-fill text-sm-center nav-link" href="#">Status <i class="fas fa-arrow-down"></i></a>
-                            <a class="flex-sm-fill text-sm-center nav-link" href="#">Criado em <i class="fas fa-arrow-down"></i></a>
-
-                        </nav>
-
+                    <div class="painel-esquerdo">
+                       <h1 >HOTEL PET</h1> 
                     </div>
                     
+                    <div class="painel-esquerdo d-grid" >
+                       <button type="button" class="btn btn-primary">Pet</button>
+                        <button type="button" class="btn btn-secondary">Usuário</button>
+                        <button type="button" class="btn btn-success">Reservas</button> 
+                    </div>
+    
                 </div>
+    
+                <div class="col-sm-8">
+                    
+                    <div class="div-bar-usuario-nome">
+                            
+                        <a class="nome-usuario"> <i class="fas fa-user-circle"></i> Joao da silva</a>
+    
+                    </div>
+                   
+                    <hr>
+                    <div>
+                        <div> <!-- div que contem o titulo home e os botoes de novo remover e mudar o status -->
+                            
+                            <div>
+                                <h4> Home/Usuários</h4>
+                            </div>
+    
+                            <div>
+                                <section>
+                                <h3> Usuário </h3>
+                                </section>
+    
+                                <section>
+                                    <button><i class="fas fa-user-plus"></i> Novo</button>
+                                    <button> <i class="fas fa-user-minus"></i> Remover</button>
+                                    <button><i class="fas fa-check"></i> Mudar Status</button>
+                                </section>
+    
+                                <section>
+                                    <a>Visualizar Por:</a>
+    
+                                    <button>Usuário</button>
+                                    <button>Função</button>
+    
+                                </section>
+                            </div>
+                            
+    
+                        </div>
+    
+                        <div> <!-- div que contem os inputs -->
+                            
+                            <section>
+                                <input placeholder="ID">
+        
+                                <label>Criado em:
+                                    <input type="date" >
+                                </label>
+                                   
+                                <input type="date" >
+        
+                            </section>
+        
+                            <section>
+                                <input type="email" placeholder="exemple@gmail.com">
+                                <input type="" placeholder="João da silva">
+                            </section>
+        
+                            <section>
+                                <label>Status:
+                                    <input placeholder="Ativo" id="status">
+                                </label>
+                                    
+        
+                                <input placeholder="Função">
+                            </section>
+    
+                            <div>
+    
+                                <button><i class="fas fa-search"></i> Pesquisar</button>
+                                <button> <i class="fas fa-redo"></i> Limpar</button>
+        
+                            </div>
+    
+                        </div>
+    
+                        <div> <!-- div que contem a barra de navegação e vai mostra -->
+    
+                            <nav class="nav nav-pills flex-column flex-sm-row">
+                                
+                                <a class="flex-sm-fill text-sm-center nav-link" href="#"> <i class="fas fa-user-circle"></i> Foto </a>
+                                <a class="flex-sm-fill text-sm-center nav-link" href="#">E-mail <i class="fas fa-arrow-down"></i></a>
+                                <a class="flex-sm-fill text-sm-center nav-link" href="#">Nome <i class="fas fa-arrow-down"></i></a>
+                                <a class="flex-sm-fill text-sm-center nav-link" href="#">Função <i class="fas fa-arrow-down"></i></a>
+                                <a class="flex-sm-fill text-sm-center nav-link" href="#">Status <i class="fas fa-arrow-down"></i></a>
+                                <a class="flex-sm-fill text-sm-center nav-link" href="#">Criado em <i class="fas fa-arrow-down"></i></a>
+    
+                            </nav>
+    
+                        </div>
+                        
+                    </div>
+                </div>
+            
 
 
             </div>
