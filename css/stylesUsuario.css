@@ -62,6 +62,15 @@ hr{
     margin-left: 5px;
    
 }
+.linha-tabela{
+    background-color: #aeb7bf;
+    color: #004ce3;
+    
+}
+.linha-funcoes {
+    color: #BC31EA;
+    cursor: pointer;
+}
 
 .div-inputs{
     padding: 5px;
