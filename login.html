@@ -7,10 +7,16 @@
         <title>Hotel Pet</title>
 
         <link rel="stylesheet" href="./css/stylesLogin.css">
+        <script> src="./js/login.js"</script>
+
+        <script src="https://kit.fontawesome.com/3462cd63e9.js" crossorigin="anonymous"></script>
+        
     </head>
 
     <body>
-    
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Abel&display=swap" rel="stylesheet">
         <form>
             <div class="container">
 
@@ -22,29 +28,34 @@
                     <h1>Hotel Pet</h1>
     
                     <div class="login-senha-enviar">
+                    
                         
                         <input id="login-newsletter" name="login-newsletter" type="login" class="form-newsletter__campo" placeholder="Login">        
-                        <input type="Senha" id="field-password" class="field-password" placeholder="Senha">
-                           <input type="checkbox" id="manter-conectado">
+                        
+                        <div class="password-container">
+                            <input type="password" id="field-password" class="field-password" placeholder="Senha">
+                            <i class="fas fa-eye" id="eye" onclick="showPassword()" ></i>
+                            <i class="fas fa-eye-slash " id="eye-slash" onclick="showPassword()" ></i>
+                        </div>
+                         <input type="checkbox" id="manter-conectado">
                                 <span>Mantenha-me conectado</span>
                             <div id="esqueceu-senha">
                                 <a href="#"> Esqueceu sua senha?</a>
                             </div>
                             
                                 <button id="botao-enviar">Enviar</button>
-                                <span id="ou"> ou </span>
+                                <h2><span id="ou"> ou </span></h2>
+                                
                                 <section class="links-container">
-                                    
-                                    
-                                    <div class="col">
+                           
                                         <a href="#" class="fb btn">
-                                          <i class="fa fa-facebook fa-fw"></i> Facebook
+                                          <i class="fa fa-facebook fa-fw"></i>
                                         </a>
                                         <a href="#" class="twitter btn">
-                                          <i class="fa fa-twitter fa-fw"></i> Twitter
+                                          <i class="fab fa-twitter fa-fw"></i> 
                                         </a>
                                         <a href="#" class="google btn">
-                                          <i class="fa fa-google fa-fw"></i> Google
+                                          <i class="fa fa-google fa-fw"></i> 
                                         </a>
                                       </div>
 
