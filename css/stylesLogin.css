@@ -6,7 +6,6 @@
 
 }
 
-
 h1{
     font-family: 'Inter', sans-serif;
     text-align: center;
@@ -18,26 +17,20 @@ h1{
 
 .container-lado-esquerdo{
     border: solid #E5E5E5;
+    border-radius: 1%;
 }
 .container-lado-direito{
     
     background-color: #E5E5E5;
     border: solid #E5E5E5;
     border-radius: 1%;
-    margin-left: 1%;
-    width: 28%;
-    height: 80%;
-    display: inline;
-    margin-left: 5%;
-    
-    
+    width: 270%;
+    margin-left: 2%;
 
 }
 
 .login-senha-enviar{
     font-family: 'Abel', sans-serif;
-    display: inline;
-    margin-bottom: 4%;
     
 }
 #login-newsletter{
@@ -46,7 +39,7 @@ h1{
     border: 2px solid #aaaaaa;
     border-radius: 4px;
     width: 88%;
-    height: 6%;
+
     padding-top: 2%;
     padding-bottom: 2%;
     margin-left: 6%;
@@ -59,7 +52,7 @@ h1{
     border: 2px solid #aaaaaa;
     border-radius: 4px;
     width: 88%;
-    height: 4%;
+    
     padding-top: 2%;
     padding-bottom: 2%;
     margin-left: 6%;
@@ -69,7 +62,7 @@ h1{
     
     position: absolute;
     right: 3%;
-    bottom: 58%;
+    bottom: 55%;
     cursor: pointer;
     color: #777;
 }
@@ -86,10 +79,7 @@ h1{
 #esqueceu-senha{
     
     display: inline;
-    margin-left: 12%;
-    margin-bottom: 12%;
-    
-
+    margin-left: 21%;
 }
 
 #botao-enviar{
@@ -110,9 +100,9 @@ h1{
 #ou{
     
     font-family: 'Abel', sans-serif;
-    font-size: 88%;
+    font-size: 80%;
     margin-left: 4%;
-    margin-bottom: 10%;
+    margin-bottom: 5%;
 }
 h2 {
     width: 90%; 
@@ -130,9 +120,9 @@ h2 {
 
 .links-container{
     display: flex;
-    margin-top: 12%;
-    margin-left: 20%;
-    margin-bottom: 22%;
+    margin-top: 6%;
+    margin-left: 22%;
+   
     
 }
 .btn {
@@ -163,6 +153,7 @@ h2 {
 #criar-conta{
     font-family: 'Abel', sans-serif;
     display: inline;
-    margin-left: 40%;
-    margin-bottom: 4%;
+
+    margin-left: 43%;
+ 
 }

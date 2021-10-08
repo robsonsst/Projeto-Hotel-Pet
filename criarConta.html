@@ -1,46 +1,57 @@
 <!DOCTYPE html>
 <html lang="pt-br">
 
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Hotel Pet</title>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Hotel Pet</title>
 
-    <link rel="stylesheet" href="./css/stylesCriarConta.css">
-</head>
+        <link rel="stylesheet" href="./css/stylesCriarConta.css">
+        <script> src="./js/criarConta.js"</script>
 
-<body>
-    <div id="imagem-dog">
-        <img src="imagens/pet-shop-login.jpg" alt="Imagem de login" width="960" height="860" >
-    </div>
+        <script src="https://kit.fontawesome.com/3462cd63e9.js" crossorigin="anonymous"></script>
+        
+    </head>
 
-    <div id="login-senha">
+    <body>
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Abel&display=swap" rel="stylesheet">
+        <form>
+            <div class="container">
 
-        <div id="hotel-pet">
-            <h1>Hotel Pet</h1>
-        </div>
-
-        <div id="caixa-login">
-            <input id="login-newsletter" name="login-newsletter" type="login" class="form-newsletter__campo" placeholder="Login">
-        </div>
+                <div class="container-lado-esquerdo">
+                    <img src="imagens/pet-shop-login.jpg" alt="Imagem de login" width="1012" height="695" >
+                </div>
     
-        <div id="caixa-senha">
-            <input type= "password" id="senha-newsletter" name="senha-newsletter" type="senha" class="form-newsletter__campo" placeholder="Senha">
-            <span toggle="#password-field" class="fa fa-fw fa-eye field-icon toggle-password"></span>
-        </div>
+                <div class="container-lado-direito">
+                    <h1>Hotel Pet</h1>
+    
+                    <div class="login-senha-criar">
+                        <input id="login-newsletter" name="login-newsletter" type="login" class="form-newsletter__campo" placeholder="Login">        
+                        
+                        <div class="password-container">
+                            <input type="password" id="field-password" class="field-password" placeholder="Senha">
+                            <i class="fas fa-eye" id="eye" onclick="showPassword()" ></i>
+                            <i class="fas fa-eye-slash " id="eye-slash" onclick="showPassword()" ></i>
+                        </div>
+                        <div>
+                            <button id="botao-criar">Criar conta</button>
+                        </div>
+                        
+                        <div class="link-container">
+                            <a href="#"> Já tem conta? Login</a>
+                        </div>
+                            
 
-        <div id="caixa-criar-conta">
-            <input type="button" value="Criar conta">
-        </div>
+                    </div>
 
-    <div id="link-login">
-        <a href="#"> Já tem conta?Login</a>
-    </div>
+                </div>
+            </div>
+
+        </form>
         
 
-    
-    </div>   
-   
-</body>
+    </body>
 
 </html>

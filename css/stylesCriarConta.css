@@ -1,89 +1,95 @@
-body{
-    font-family: 'Helvetica', sans-serif;
-    color: blue;
-    background: #FFFFFF;
+.container{
+    background-color: #fff;
+    display: flex;
+    width: 100%;
+    height: 100%;
+
 }
 
-#imagem-dog{ /**Imagem inicial na tela de login*/
+h1{
+    font-family: 'Inter', sans-serif;
+    text-align: center;
+    margin-top: 12%;
+    margin-bottom: 20%;
+    color: #074EE8;
+}
+
+.container-lado-esquerdo{
+    border: solid #E5E5E5;
+    border-radius: 1%;
+}
+
+.container-lado-direito{
     
-    border: 2px solid #E5E5E5;
-    position: absolute;
-    float: left;
-}
-
-#login-senha{/**toda borda e posição do conjunto login*/
-    width: 482px;
-    height: 864px;
-    padding-left: 45px;
     background-color: #E5E5E5;
-    
-    float: right;
+    border: solid #E5E5E5;
+    border-radius: 1%;
+    width: 270%;
+    margin-left: 2%;
 
 }
-
-
-h1{/** texto Hotel Pet no login*/
-    
-    font-size: 40px;
-    font-weight: bold;
-    padding: 84px 1px 1px 130px ;
+.login-senha-criar{
+    font-family: 'Abel', sans-serif;
 }
 
-#caixa-login{/** posição caixa de login no login*/
-    padding: 130px  1px 20px 10px ;
-
-}
-
-#caixa-login input{/**tamanho caixa de login no login*/
+#login-newsletter{
     
-    padding-top: 20px;
-    padding-right: 225px ; 
-    font-size: 16px;
-    background-color:#FFFFFF ;
-    border:2px solid #AAAAAA;
+    font-family: 'Abel', sans-serif;
+    border: 2px solid #aaaaaa;
     border-radius: 4px;
-    
-}
-
-#caixa-senha{/** posição caixa de senha no login*/
-
-    padding: 73px 1px 47px 10px;
-
-}
-#caixa-senha input{/**tamanho caixa de senha no login*/
-    
-    
-    padding-top: 20px;
-    padding-right: 225px ; 
-    font-size: 16px;
-    background-color:#FFFFFF ;
-    border:2px solid #AAAAAA;
-    border-radius: 4px;
+    width: 88%;
  
-}
-
-#caixa-criar-conta{
-    
-    padding: 40px 1px 40px 10px ;
-
-}
-
-#caixa-criar-conta input{
-
-    
-    padding-top: 20px;
-    padding-right: 335px ;
-    color: #FFFFFF;
-    background: #074EE8;
-    font-size: 16px;
-    border: 2px solid #074EE8;
-    border-radius: 4px;
+    padding-top: 2%;
+    padding-bottom: 2%;
+    margin-left: 6%;
+    margin-bottom: 13%;
    
-    
+
 }
 
-#link-login{
+#field-password{
+    font-family: 'Abel', sans-serif;
+    border: 2px solid #aaaaaa;
+    border-radius: 4px;
+    width: 88%;
 
-    padding: 40px 0px 0px 130px;
+    padding-top: 2%;
+    padding-bottom: 2%;
+    margin-left: 6%;
+    margin-bottom: 5%;
+}
+
+.password-container i{
+    
+    position: absolute;
+    right: 3%;
+    bottom: 55%;
+    cursor: pointer;
+    color: #777;
+}
+#eye{
+    display: none;
+}
+#botao-criar{
+    
+    font-family: 'Abel', sans-serif;
+    width: 89%;
+    height: 6%;
+    padding-top: 2%;
+    padding-bottom: 2%;
+    margin-left: 6%;
+    margin-top: 10%;
+    margin-bottom: 15%;
+    color:#fff;
+    background-color: #074EE8;
+    border: solid #074EE8;
+    border-radius: 4px;
+}
+
+
+.link-container{
+
+    margin-left: 38%;
+       
 
 }
