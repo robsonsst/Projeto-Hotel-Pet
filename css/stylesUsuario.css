@@ -75,6 +75,10 @@ hr{
 .div-inputs{
     padding: 5px;
     background-color: #D3D3D3;
+    
+}
+.div-tabela{
+    padding-top: 1.0em;
 }
 
 .div-botoes-pesquisa{
