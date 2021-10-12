@@ -29,6 +29,7 @@ body{
 .titulo-editar-reserva{
     margin-left: 5rem;
 }
+
 .main{
     background-color: #D3D3D3;
     padding: 1rem;
@@ -39,6 +40,8 @@ body{
 .componentes{
     margin-left: 20%;
 }
+
+
 
 hr{
     width: 110%;
