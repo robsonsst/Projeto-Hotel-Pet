@@ -42,7 +42,6 @@ body{
     display: inline-flex;
     flex-direction: column;
     
-    
 }
 
 .componentes{
@@ -72,24 +71,4 @@ div .div-bar-usuario-nome a{
     font-size: 20px;
     text-decoration: none;
     
-}
-.label{
-    display: flex;
-    margin:  0.5rem 0px 0px 1rem;
-    white-space: nowrap;
-}
-.paragrafo{
-    margin:  0px 0px 0px 1rem;
-
-}
-.div-anotacoes{
-    display: flex;
-}
-.botoes{
-    margin-left: 1rem;
-}
-.btn-voltar{
-    margin-left: 2rem;
-    justify-content: start;
-    width: 90px;
 }
