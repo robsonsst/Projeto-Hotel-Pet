@@ -15,6 +15,10 @@ body{
     justify-content: start;
     padding-left: 0.01em;
 }
+.botao-add{
+    width: 70px;
+    height: 70px;
+}
 
 .painel-lado-esquerdo{
     width: 25%;
@@ -29,19 +33,37 @@ body{
 .titulo-editar-reserva{
     margin-left: 5rem;
 }
-
 .main{
     background-color: #D3D3D3;
     padding: 1rem;
     
 }
-
+.section{
+    display: flex;
+    flex-direction: column;
+    
+}
 
 .componentes{
     margin-left: 20%;
 }
 
+.input{
+    width: 60%;
+    height: 30px;
+    /* margin-bottom: 0.5rem; */
 
+}
+.input-data{
+    width: 150px;
+    height: 30px;
+    /* margin-bottom: 0.5rem; */
+    margin-right: 4em;
+    
+}
+.notas{
+    height: 60px;
+}
 
 hr{
     width: 110%;
