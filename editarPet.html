@@ -6,13 +6,13 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-F3w7mX95PdgyTmZZMECAngseQB83DfGTowi0iMjiWaeVhAn4FJkqJByhZMI3AhiU" crossorigin="anonymous">
         
-        <link rel="stylesheet" href="./css/stylesEditarPerfil.css">
+        <link rel="stylesheet" href="./css/stylesEditarPet.css">
 
 
         <script src="https://kit.fontawesome.com/5b7d87045e.js" crossorigin="anonymous" defer ></script>
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-/bQdsTh/da6pkI1MST/rWKFNjaCP5gBSY4sEBT38Q/9RBh9AH40zEOg7Hlq2THRZ" crossorigin="anonymous" defer></script>
 
-        <title>Editar Perfil</title>
+        <title>Editar Pet</title>
         
 
     </head>
@@ -51,38 +51,50 @@
                         <div class=""> <!-- div que contem o titulo home e os botoes de novo remover e mudar o status -->
                             
                             <div class="titulo-pagina">
-                                <h5> Home/Editar Perfil</h5>
+                                <h5> Home/Pet/Editar Pet</h5>
                             </div>
     
                             <div class="main">
                                 
                                 <section>
                                     <br>
-                                    <h3 class ="titulo-editar-reserva"> Editar Perfil </h3>
+                                    <h3 class ="titulo-editar-reserva"> Editar Pet </h3>
+                                </section>
+                                <section class ="foto-ao-lado">  <!-- Foto que deve ficar ao lado de Proprietario e Nome -->
+                                    
                                 </section>
 
                                 <section class="section componentes">
-                                    <br>
-                                    <label for="proprietario"> Email*</label>
-                                    <input id="proprietario" class="input" type="email">
+                                    
                                     <br>
                                     <label for="pet"> Nome*</label>
                                     <input id="pet" class="input" type="text">
                                     <br>
-                                    <label for="proprietario"> Sobrenome*</label>
-                                    <input id="proprietario" class="input" type="text">
+                                    <label for="select"> Tipo*</label>
+                                    <select id="select" class=" input form-select-sm select-status" aria-label="Default select example-sm">
+                                        <option selected>Tipo</option>
+                                        <option value="1">Gato</option>
+                                        <option value="2">Cachorro</option>
+                                    </select>
                                     <br>
-                                    <label for="pet"> Telefone*</label>
-                                    <input id="pet" class="input" type="tel">
+                                    <label for="pet"> Raça*</label>
+                                    <input id="pet" class="input" type="text">
+                                    <br>
+                                    <label for="select"> Tamanho*</label>
+                                    <select id="select" class=" input form-select-sm select-status" aria-label="Default select example-sm">
+                                        <option selected>Tamanho</option>
+                                        <option value="1">Grande</option>
+                                        <option value="2">Pequeno</option>
+                                    </select>
+
+
                                 </section>
+                                
 
 
                                 <div>
-                                    <label class="componentes"> Foto </a></label> 
                                     <br>
-                                    <button class="botoes botao-add componentes btn btn-outline-light"><i class="far fa-plus-square"></i></button>
-                                    <br>
-                                    <br>                        
+                                    <br>                   
                                     <button class="botoes componentes btn btn-primary"><i class="far fa-save"></i> Salvar</button>
                                     <button class="botoes componentes btn btn-outline-primary"> <i class="fas fa-redo"></i> Limpar</button>
                                 </div>
