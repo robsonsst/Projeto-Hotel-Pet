@@ -32,7 +32,7 @@ body {
     margin-left: 2rem;
 }
 
-.titulo-editar-reserva {
+.titulo-ver-pet {
     margin-left: 5rem;
 }
 
@@ -83,16 +83,14 @@ div .div-bar-usuario-nome a {
     margin: 0px 0px 0px 1rem;
 }
 
-.div-anotacoes {
-    display: flex;
-}
-
-.botoes {
-    margin-left: 1rem;
+.paragrafo-reserva {
+    color: blue;
+    margin: 0px 0px 0px 6rem;
 }
 
 .btn-voltar {
-    margin-left: 2rem;
+    margin-left: 5rem;
+    margin-right: 50rem;
     justify-content: start;
     width: 90px;
 }

@@ -1,115 +1,118 @@
 <!DOCTYPE html>
 <html lang="pt-br">
-    <head>
-        <meta charset="UTF-8">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-F3w7mX95PdgyTmZZMECAngseQB83DfGTowi0iMjiWaeVhAn4FJkqJByhZMI3AhiU" crossorigin="anonymous">
-        
-        <link rel="stylesheet" href="./css/styleVerReservas.css">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-F3w7mX95PdgyTmZZMECAngseQB83DfGTowi0iMjiWaeVhAn4FJkqJByhZMI3AhiU" crossorigin="anonymous">
+
+    <link rel="stylesheet" href="./css/styleVerReservas.css">
 
 
-        <script src="https://kit.fontawesome.com/5b7d87045e.js" crossorigin="anonymous" defer ></script>
-        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-/bQdsTh/da6pkI1MST/rWKFNjaCP5gBSY4sEBT38Q/9RBh9AH40zEOg7Hlq2THRZ" crossorigin="anonymous" defer></script>
+    <script src="https://kit.fontawesome.com/5b7d87045e.js" crossorigin="anonymous" defer></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-/bQdsTh/da6pkI1MST/rWKFNjaCP5gBSY4sEBT38Q/9RBh9AH40zEOg7Hlq2THRZ" crossorigin="anonymous" defer></script>
 
-        <title>Ver Reserva</title>
-        
+    <title>Ver Reserva</title>
 
-    </head>
+</head>
 
-    <body>
-        <div class=" m-4 container-fluid grid ">
-            <div class="  row ">
-                <div class=" painel-lado-esquerdo col-sm-4 d-flex flex-column bd-highlight mb-2 ">
-                
-                    <div class=" painel-esquerdo">
-                       <h1 class="d-flex justify-content-center" >HOTEL PET</h1> 
-                    </div>
-                    
-                    <div class=" d-grid gap-3" >
-                       <button type="button" class="btn btn-primary btn-sm botao-esquerdo " > <i class="fas fa-paw p-1"></i> Pet</button>
-                       <button type="button" class="btn btn-success btn-sm botao-esquerdo "><i class="fas fa-book-reader p-1"></i> Reservas</button> 
-                    </div>
-                   
+<body>
+    <div class=" m-4 container-fluid grid ">
+        <div class="  row ">
+            <div class=" painel-lado-esquerdo col-sm-4 d-flex flex-column bd-highlight mb-2 ">
+
+                <div class=" painel-esquerdo">
+                    <h1 class="d-flex justify-content-center">HOTEL PET</h1>
                 </div>
-                
-                <div class=" col-sm-8">
-                   
-                    
-                    <div class=" div-bar-usuario-nome">
-                            
-                        <a class="nome-usuario"> <i class="fas fa-user-circle"></i> Joao da silva</a>
-        
-                    </div>
-                    
-                    
-                   
-                    <hr>
 
-                    <div class=" painel-componentes">
-                        <div class=""> <!-- div que contem o titulo home e os botoes de novo remover e mudar o status -->
-                            
-                            <div class="titulo-pagina">
-                                <h5> Home/Reserva/Ver Reserva</h5>
-                            </div>
-    
-                            <div class="main">
-                                
-                                <section>
-                                    <h3 class ="titulo-editar-reserva"> Ver Reserva </h3>
-                                </section>
-
-                                <section class="section componentes">
-
-                                    <label class="label"> Id: <p class = "paragrafo">1234087965</p> </label>
-                                    
-                                    <label class="label" >Proprietario: <p class = "paragrafo">Daenerys targaryen</p> </label>
-                                    
-                                    <label class="label" > Pet: <p class = "paragrafo">Drogon</p></label>
-
-                                    <label class="label" > Chegada: <p class = "paragrafo">02/05/2021</p></label>
-
-                                    <label class="label" > Partida: <p class = "paragrafo">07/05/2021</p></label>
-
-                                    <div class="div-anotacoes">
-                                        <label for="notas" class="label" > Notas:</label>
-                                        <p id="notas" class = "paragrafo"> Mussum Ipsum, cacilds vidis litro abertis. Atirei o pau no gatis, per gatis num morreus.</p>
-                                    </div>
-                                    
-                                    <div class="div-anotacoes">
-                                        <label for="anotacao-funcionario" class="label" > Anotações do Funcionario:</label>
-                                        <p id="anotacao-funcionario" class = "paragrafo"> Copo furadis é disculpa de bebadis, arcu quam euismod magna. </p> 
-                                    </div>
-                                   
-                                    <label class="label" > Imagens: <button class="botoes botao-add btn btn-outline-light"><i class="far fa-plus-square"></i></button> </label> 
-
-                                    <label class="label" > Status: <button class="botoes btn btn-light">Finalizado</button>  </label> 
-
-                                    <label class="label" > total das diarias: <a class="paragrafo">R$: 40,00 </a></label>
-
-                                    <label class="label" > Recibo: <p class = "paragrafo"><i class="fas fa-paperclip"></i>recibo.pdf</p></label>
-
-                                    <label class="label" > Criada em: <p class = "paragrafo">02/05/2021</p></label>
-
-                                    <label class="label" > Chegada em: <p class = "paragrafo">07/05/2021</p></label>
-
-                                </section>
-
-                                <button class="btn-voltar btn btn-outline-primary"><i class="fas fa-arrow-left"></i>  Voltar</button>
-
-                            </div>
-                            
-                            
-    
-                        </div>
-                        
-                    </div>
+                <div class=" d-grid gap-3">
+                    <button type="button" class="btn btn-primary btn-sm botao-esquerdo "> <i class="fas fa-paw p-1"></i> Pet</button>
+                    <button type="button" class="btn btn-success btn-sm botao-esquerdo "><i class="fas fa-book-reader p-1"></i> Reservas</button>
                 </div>
-            
-
 
             </div>
 
+            <div class=" col-sm-8">
+
+
+                <div class=" div-bar-usuario-nome">
+
+                    <a class="nome-usuario"> <i class="fas fa-user-circle"></i> Joao da silva</a>
+
+                </div>
+
+
+
+                <hr>
+
+                <div class=" painel-componentes">
+                    <div class="">
+                        <!-- div que contem o titulo home e os botoes de novo remover e mudar o status -->
+
+                        <div class="titulo-pagina">
+                            <h5> Home/Reserva/Ver Reserva</h5>
+                        </div>
+
+                        <div class="main">
+
+                            <section>
+                                <h3 class="titulo-editar-reserva"> Ver Reserva </h3>
+                            </section>
+
+                            <section class="section componentes">
+
+                                <label class="label"> Id: <p class = "paragrafo">1234087965</p> </label>
+
+                                <label class="label">Proprietario: <p class = "paragrafo">Daenerys targaryen</p> </label>
+
+                                <label class="label"> Pet: <p class = "paragrafo">Drogon</p></label>
+
+                                <label class="label"> Chegada: <p class = "paragrafo">02/05/2021</p></label>
+
+                                <label class="label"> Partida: <p class = "paragrafo">07/05/2021</p></label>
+
+                                <div class="div-anotacoes">
+                                    <label for="notas" class="label"> Notas:</label>
+                                    <p id="notas" class="paragrafo"> Mussum Ipsum, cacilds vidis litro abertis. Atirei o pau no gatis, per gatis num morreus.</p>
+                                </div>
+
+                                <div class="div-anotacoes">
+                                    <label for="anotacao-funcionario" class="label"> Anotações do Funcionario:</label>
+                                    <p id="anotacao-funcionario" class="paragrafo"> Copo furadis é disculpa de bebadis, arcu quam euismod magna. </p>
+                                </div>
+
+                                <label class="label"> Imagens: </a></label>
+                                 <button class="botoes botao-add btn btn-outline-light"><i class="far fa-plus-square"></i></button>
+
+                                    <label class="label"> Status: <button class="botoes btn btn-light">Finalizado</button>  </label>
+
+                                    <label class="label"> total das diarias: <a class="paragrafo">R$: 40,00 </a></label>
+
+                                    <label class="label"> Recibo: <p class = "paragrafo"><i class="fas fa-paperclip"></i>recibo.pdf</p></label>
+
+                                    <label class="label"> Criada em: <p class = "paragrafo">02/05/2021</p></label>
+
+                                    <label class="label"> Chegada em: <p class = "paragrafo">07/05/2021</p></label>
+
+                            </section>
+
+                            <button class="btn-voltar btn btn-outline-primary"><i class="fas fa-arrow-left"></i>  Voltar</button>
+
+                        </div>
+
+
+
+                    </div>
+
+                </div>
+            </div>
+
+
+
         </div>
-    </body>
+
+    </div>
+</body>
+
 </html>
