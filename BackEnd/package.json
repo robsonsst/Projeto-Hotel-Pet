@@ -4,11 +4,12 @@
   "main": "index.js",
   "license": "MIT",
   "scripts": {
-    "dev": "nodemon server.js",
+    "dev": "nodemon ./src/server.js",
     "start": "node server.js"
   },
   "dependencies": {
     "express": "^4.17.1",
+    "knex": "^0.95.11",
     "sqlite": "^4.0.23",
     "sqlite3": "^5.0.2"
   },
