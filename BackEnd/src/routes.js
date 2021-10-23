@@ -1,21 +1,17 @@
 const express = require('express');
+
 const routes = express.Router();
 
-routes.get('/users', (req, res)=>{ //metodo get da tela usuario clicando no botão pesquisar
+const UserController = require('./controller/UserController');
 
-    const parametro = req.query;
+routes.get('/users',UserController.list)
 
-    res.json(parametro)
-} ) //retorna recebendo todos os parametros
+routes.get('/users/:id',UserController.show)
 
-routes.post('/usuario/pesquisa', (req, res)=>{ //metodo get da tela usuario clicando no botão pesquisar
+routes.post('/users',UserController.create)
 
-    const parametro = req.body;
-    
-    res.json(parametro)
-    // inicia a pesquisa com o banco
+routes.put('/users/:id',UserController.update)
 
-} ) //retorna recebendo Id como query
-
+routes.delete('/users/:id',UserController.delete)
 
 module.exports = routes;
