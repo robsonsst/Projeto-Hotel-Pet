@@ -4,15 +4,12 @@
   "main": "index.js",
   "license": "MIT",
   "scripts": {
-<<<<<<< HEAD
-    "dev": "nodemon ./src/server.js"
-=======
     "dev": "nodemon ./src/server.js",
     "start": "node server.js"
->>>>>>> ac91f5f6083dcb961301a5395606f492fe998d29
   },
   "dependencies": {
     "cors": "^2.8.5",
+    "cros": "^1.0.1",
     "express": "^4.17.1",
     "knex": "^0.95.11",
     "sqlite": "^4.0.23",
