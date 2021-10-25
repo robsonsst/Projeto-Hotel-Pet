@@ -9,7 +9,7 @@ module.exports = {
     },
 
     async show(req, res){
-        const {id} = req.parametro;
+        const {id} = req.params;
         const usuario = await connection('usuario')
                     .where('id',id)
                     .select('*');
@@ -20,7 +20,7 @@ module.exports = {
 
     async create(req,res){
         const {nome, sobrenome, email, telefone, status, criado_em, funcao, usuario, senha} = req.body;
-        const id = crypto.randomBytes(4).toString('HEX');
+       
         await connection('usuario').insert({
             nome,
             sobrenome,
@@ -32,11 +32,11 @@ module.exports = {
             usuario,
             senha
         })
-        return res.json({id})
+        return  res.status(200).send();
     },
 
     async update(req, res){
-        const {id} = req.parametro;
+        const {id} = req.params;
         const {nome, sobrenome, email, telefone, status, criado_em, funcao, usuario, senha} = req.body;
         await connection('usuario').where('id',id).update({
             nome,
@@ -52,7 +52,7 @@ module.exports = {
         return res.status(204).send();
     },
     async delete(req, res){
-        const {id} = req.parametro;
+        const {id} = req.params;
         await connection('usuario').where('id',id).delete();
         return res.status(204).send();
 
