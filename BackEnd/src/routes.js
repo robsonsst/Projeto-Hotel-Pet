@@ -3,6 +3,11 @@ const express = require('express');
 const routes = express.Router();
 
 const UserController = require('./controller/UserController');
+const ClientController = require('./controller/ClientController');
+const PetController = require('./controller/PetController');
+const ReservaController = require('./controller/ReservaController');
+const ImagemReservaController = require('./controller/ImagemReservaController');
+
 
 /*---------------------------------Rotas Usuário--------------------------------------------*/
 
