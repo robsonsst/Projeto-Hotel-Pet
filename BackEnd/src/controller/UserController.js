@@ -4,48 +4,56 @@ const connetion = require('../dataBase/connection');
 
 module.exports = {
     async list(req, res){
-        const users = await connection('users').select('*');
-        return res.json(users);
+        const users = await connection('usuario').select('*');
+        return res.json(usuario);
     },
 
     async show(req, res){
         const {id} = req.parametro;
-        const user = await connection('users')
+        const user = await connection('usuario')
                     .where('id',id)
                     .select('*');
-        return res.json(user);
+        return res.json(usuario);
     },
     
 
 
     async create(req,res){
-        const {nome, email, idade, empresa} = req.body;
+        const {nome, sobrenome, email, telefone, status, criado_em, funcao, usuario, senha} = req.body;
         const id = crypto.randomBytes(4).toString('HEX');
-        await connection('users').insert({
-            id,
+        await connection('usuario').insert({
             nome,
+            sobrenome,
             email,
-            idade,
-            empresa
+            telefone,
+            status,
+            criado_em,
+            funcao,
+            usuario,
+            senha
         })
         return res.json({id})
     },
 
     async update(req, res){
         const {id} = req.parametro;
-        const {nome, email, idade, empresa} = req.body;
-        await connection('users').where('id',id).update({
-            id,
+        const {nome, sobrenome, email, telefone, status, criado_em, funcao, usuario, senha} = req.body;
+        await connection('usuario').where('id',id).update({
             nome,
+            sobrenome,
             email,
-            idade,
-            empresa
+            telefone,
+            status,
+            criado_em,
+            funcao,
+            usuario,
+            senha
         })
         return res.status(204).send();
     },
     async delete(req, res){
         const {id} = req.parametro;
-        await connection('users').where('id',id).delete();
+        await connection('usuario').where('id',id).delete();
         return res.status(204).send();
 
     }
