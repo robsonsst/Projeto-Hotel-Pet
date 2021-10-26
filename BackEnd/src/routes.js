@@ -6,7 +6,7 @@ const UserController = require('./controller/UserController');
 const ClientController = require('./controller/ClientController');
 const PetController = require('./controller/PetController');
 const ReservaController = require('./controller/ReservaController');
-//const ImagemReservaController = require('./controller/ImagemReservaController');
+const ImagemReservaController = require('./controller/ImagemReservaController');
 
 
 /*---------------------------------Rotas Usuário--------------------------------------------*/
@@ -47,15 +47,27 @@ routes.delete('/pet/:id', PetController.delete)
 
 // /*----------------------------------Rotas Reserva--------------------------- */
 
-// routes.get('/reserva', ReservaController.list)
+routes.get('/reserva', ReservaController.list)
 
-// routes.get('/reserva/:id', ReservaController.show)
+routes.get('/reserva/:id', ReservaController.show)
 
-// routes.post('/reserva', ReservaController.create)
+routes.post('/reserva', ReservaController.create)
 
-// routes.put('/reserva/:id', ReservaController.update)
+routes.put('/reserva/:id', ReservaController.update)
 
-// routes.delete('/reserva/:id', ReservaController.delete)
-/*------------------------------------------------------------- */
+routes.delete('/reserva/:id', ReservaController.delete)
+    /*------------------------------------------------------------- */
+
+/*----------------------------------Rotas Reserva--------------------------- */
+
+routes.get('/imagemReserva', ImagemReservaController.list)
+
+routes.get('/imagemReserva/:id', ImagemReservaController.show)
+
+routes.post('/imagemReserva', ImagemReservaController.create)
+
+routes.put('/imagemReserva/:id', ImagemReservaController.update)
+
+routes.delete('/imagemReserva/:id', ImagemReservaController.delete)
 
 module.exports = routes;
