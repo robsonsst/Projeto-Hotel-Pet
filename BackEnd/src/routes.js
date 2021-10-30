@@ -46,7 +46,7 @@ routes.put('/reserva/:id', ReservaController.update)
 routes.delete('/reserva/:id', ReservaController.delete)
     /*------------------------------------------------------------- */
 
-/*----------------------------------Rotas imagem Reserva--------------------------- */
+/*----------------------------------Rotas Reserva--------------------------- */
 
 routes.get('/imagemReserva', ImagemReservaController.list)
 
