@@ -5,7 +5,7 @@ export default function editarReserva() {
 
     return (
 
-        <div>
+        <Menu>
             <div class=" col-sm-12">
 
                 <hr></hr>
@@ -71,6 +71,6 @@ export default function editarReserva() {
 
                 </div>
         
-            </div>
+        </Menu>
 
     )}

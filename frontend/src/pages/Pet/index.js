@@ -1,10 +1,11 @@
 import React, { useState, useEffect } from 'react';
 import './style.css';
+import Menu from '../barraLateral'
 
 export default function Pet() {
 
     return (
-        <div>
+        <Menu>
             <div class=" col-sm-12">
 
                 <hr></hr>
@@ -97,6 +98,6 @@ export default function Pet() {
                     </div>
                 </div>
             
-            </div>
+        </Menu>
     )
 }

@@ -1,18 +1,17 @@
 import React, { useState, useEffect } from 'react';
 import './style.css';
+import Menu from '../barraLateral'
 
 export default function Usuario() {
 
     return (
 
-        <div>
+        <Menu>
             <div class=" col-sm-12">
 
-                <hr></hr>
+                <hr/>
                 <body>
-                <link rel="preconnect" href="https://fonts.googleapis.com"></link>
-                <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin></link>
-                <link href="https://fonts.googleapis.com/css2?family=Abel&display=swap" rel="stylesheet"></link>
+                
                     <form>
                         <div class="container">
 
@@ -70,6 +69,6 @@ export default function Usuario() {
                     
                 </div>
 
-            </div>           
+            </Menu>           
                 
     )}

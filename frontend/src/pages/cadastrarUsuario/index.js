@@ -1,11 +1,12 @@
 import React, { useState, useEffect } from 'react';
 import './style.css';
+import Menu from '../barraLateral'
 
 export default function cadastrarUsuario() {
 
     return (
 
-        <div>
+        <Menu>
             <div class=" col-sm-12">
 
                 <hr></hr>
@@ -57,6 +58,6 @@ export default function cadastrarUsuario() {
                 </div>
                 
             </div>
-        </div>
+        </Menu>
     )
 }

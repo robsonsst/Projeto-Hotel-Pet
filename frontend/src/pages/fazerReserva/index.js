@@ -1,11 +1,12 @@
 import React, { useState, useEffect } from 'react';
 import './style.css';
+import Menu from '../barraLateral'
 
 export default function fazerReserva() {
 
     return (
 
-        <div>
+        <Menu>
             <div class=" col-sm-12">
 
                 <hr></hr>
@@ -61,7 +62,7 @@ export default function fazerReserva() {
 
                 </div>
             
-            </div>
+        </Menu>
                 
                 
     )}

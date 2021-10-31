@@ -1,18 +1,13 @@
-import React from 'react';
+import React, { Children } from 'react';
+import { Link, useHistory } from 'react-router-dom';
 import './style.css';
-import Usuario from '../Usuario'
-import Reserva from '../Reserva'
-import Pet from '../Pet'
-import { BrowserRouter as Router, Switch, Route, Link } from 'react-router-dom';
-import Routes from '../../routes'
 
 
 
-export default function Componente() {
 
-    function usuario() {
-        
-    }
+export default function Componente(props) {
+
+    const history = useHistory();
 
     return (
         <div class=" m-4 container-fluid grid ">
@@ -24,9 +19,10 @@ export default function Componente() {
                     </div>
 
                     <div class=" d-grid gap-3" >
-                        <button type="button" class="btn btn-primary btn-sm botao-esquerdo "  onClick={Pet}> <i class="fas fa-paw p-1"></i> Pet</button>
-                        <button type="button" class="btn btn-secondary btn-sm botao-esquerdo " onClick={usuario}> <i class="fas fa-user p-1"></i> Usuário</button>
-                        <button type="button" class="btn btn-success btn-sm botao-esquerdo " onClick={Reserva}> <i class="fas fa-book-reader p-1"></i> Reservas</button>
+                        <button type="button" class="btn btn-primary btn-sm botao-esquerdo "  onClick={()=>history.push('/pet')} > <i class="fas fa-paw p-1"></i> Pet</button>
+                        <button type="button" class="btn btn-secondary btn-sm botao-esquerdo " onClick={()=>history.push('/')} > <i class="fas fa-user p-1"></i> Usuário</button>
+                        <button type="button" class="btn btn-success btn-sm botao-esquerdo " onClick={()=>history.push('/reserva')} > <i class="fas fa-book-reader p-1"></i> Reservas</button>
+                        {/* <Link to={'/pet'}> {props.cachorro} </Link> */}
                     </div>
 
                 </div>
@@ -39,7 +35,7 @@ export default function Componente() {
 
                     </div>
 
-                    <Routes/>
+                    {props.children}
                     
                 </div>
 

@@ -1,11 +1,12 @@
 import React, { useState, useEffect } from 'react';
 import './style.css';
+import Menu from '../barraLateral'
 
 export default function verReserva() {
 
     return (
 
-        <div>
+        <Menu>
             <div class=" col-sm-12">
 
                 <hr></hr>
@@ -69,6 +70,6 @@ export default function verReserva() {
 
             </div>
             
-        </div>
+        </Menu>
 
     )}
