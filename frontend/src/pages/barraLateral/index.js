@@ -3,9 +3,8 @@ import './style.css';
 import Usuario from '../Usuario'
 import Reserva from '../Reserva'
 import Pet from '../Pet'
+import { BrowserRouter as Router, Switch, Route, Link } from 'react-router-dom';
 
-
-import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 
 
 
@@ -27,7 +26,7 @@ export default function Componente() {
 
                     <div class=" d-grid gap-3" >
                         <button type="button" class="btn btn-primary btn-sm botao-esquerdo "  onClick={Pet}> <i class="fas fa-paw p-1"></i> Pet</button>
-                        <button type="button" class="btn btn-secondary btn-sm botao-esquerdo " onClick={Usuario}> <i class="fas fa-user p-1"></i> Usuário</button>
+                        <button type="button" class="btn btn-secondary btn-sm botao-esquerdo " onClick={usuario}> <i class="fas fa-user p-1"></i> Usuário</button>
                         <button type="button" class="btn btn-success btn-sm botao-esquerdo " onClick={Reserva}> <i class="fas fa-book-reader p-1"></i> Reservas</button>
                     </div>
 
