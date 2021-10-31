@@ -12,8 +12,14 @@ export default function Routes(){
                 <Route  exact path="/" component={Usuario}/>
                 <Route  exact path="/" component={Reserva}/>
                 <Route  exact path="/" component={Pet}/>
+
                 <Route path="/create" component={Reserva}/>
                 <Route path="/update/:id" component={Reserva}/>
+                <Route path="/delete/:id" component={Reserva}/>
+                
+                <Route path="/create" component={Pet}/>
+                <Route path="/update/:id" component={Pet}/>
+                <Route path="/delete/:id" component={Pet}/>
             </Switch>
         </BrowserRouter>
     );
