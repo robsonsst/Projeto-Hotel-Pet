@@ -4,8 +4,7 @@ import Usuario from '../Usuario'
 import Reserva from '../Reserva'
 import Pet from '../Pet'
 import { BrowserRouter as Router, Switch, Route, Link } from 'react-router-dom';
-
-
+import Routes from '../../routes'
 
 
 
@@ -40,13 +39,8 @@ export default function Componente() {
 
                     </div>
 
-                    <Router>
-                        <Switch>
-                            <Route path='/' exact component={Usuario} />
-                            <Route path='/reserva' component={Reserva} />
-                            <Route path='/pet' component={Pet} />
-                        </Switch>
-                    </Router>
+                    <Routes/>
+                    
                 </div>
 
             </div>
