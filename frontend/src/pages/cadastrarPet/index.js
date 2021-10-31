@@ -1,5 +1,11 @@
-import React, { useState, useEffect } from 'react';
+import React from 'react';
 import './style.css';
+import Usuario from '../Usuario'
+import Reserva from '../Reserva'
+import Pet from '../Pet'
+import { BrowserRouter as Router, Switch, Route, Link } from 'react-router-dom';
+import Routes from '../../routes'
+
 
 export default function cadastrarPet() {
 
