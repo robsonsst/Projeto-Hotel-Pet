@@ -125,14 +125,14 @@ h2 {
    
     
 }
-.btn {
+.BTN {
     
     margin-left: 7%;
-    padding: 4% 4% 4% 4%;   
+    padding: 4% 4% 4% 4%;    
     display: inline;
-    font-size: 170%;
+    font-size: 170%; 
     text-decoration: none; /* remove underline from anchors */
-  }
+}
 .fb{
     
     background-color: #E5E5E5;

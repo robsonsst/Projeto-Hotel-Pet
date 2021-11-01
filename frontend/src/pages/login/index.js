@@ -43,13 +43,13 @@ export default function Usuario() {
                                             
                                             <section class="links-container">
                                     
-                                                    <a href="#" class="fb btn">
+                                                    <a href="#" class="fb BTN">
                                                     <i class="fa fa-facebook fa-fw"></i>
                                                     </a>
-                                                    <a href="#" class="twitter btn">
+                                                    <a href="#" class="twitter BTN">
                                                     <i class="fab fa-twitter fa-fw"></i> 
                                                     </a>
-                                                    <a href="#" class="google btn">
+                                                    <a href="#" class="google BTN">
                                                     <i class="fa fa-google fa-fw"></i> 
                                                     </a>
                                             </section>
