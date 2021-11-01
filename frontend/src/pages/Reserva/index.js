@@ -1,9 +1,12 @@
 import React, { useState, useEffect } from 'react';
+import { useHistory } from 'react-router-dom';
 import './style.css';
 import Menu from '../barraLateral'
 
 export default function Reserva() {
 
+    const history=useHistory();
+    
     return (
 
         <Menu>
@@ -23,7 +26,7 @@ export default function Reserva() {
                                 </section>
     
                                 <section>
-                                    <button class="componentes botoes btn btn-outline-primary "><i class="fas fa-user-plus"></i> Nova Reserva+</button>
+                                    <button class="componentes botoes btn btn-outline-primary "onClick={()=>history.push('/fazerReserva')}><i class="fas fa-user-plus"></i> Nova Reserva+</button>
                                 </section>
 
                             </div>

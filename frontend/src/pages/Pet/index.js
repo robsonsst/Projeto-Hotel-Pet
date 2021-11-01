@@ -1,11 +1,15 @@
 import React, { useState, useEffect } from 'react';
+import { useHistory } from 'react-router-dom';
 import './style.css';
 import Menu from '../barraLateral'
 
 export default function Pet() {
 
+    const history=useHistory();
+
     return (
         <Menu>
+
             <div class=" col-sm-12">
 
                 <hr></hr>
@@ -23,7 +27,7 @@ export default function Pet() {
                                 </section>
     
                                 <section>
-                                    <button class="componentes botoes btn btn-outline-primary "><i class="fas fa-user-plus"></i> Novo Pet</button>
+                                    <button class="componentes botoes btn btn-outline-primary " onClick={()=>history.push('/cadastrarPet')}> <i class="fas fa-user-plus"></i> Novo Pet</button>
                                 </section>
 
                             </div>

@@ -1,8 +1,11 @@
 import React, { useState, useEffect } from 'react';
+import { useHistory } from 'react-router-dom';
 import './style.css';
 import Menu from '../barraLateral'
 
 export default function Usuario() {
+
+    const history=useHistory();
 
     return (
         <Menu cachorro = 'viralata' >
@@ -25,7 +28,7 @@ export default function Usuario() {
                                 </section>
 
                                 <section>
-                                    <button class="componentes botoes btn btn-outline-primary "><i class="fas fa-user-plus"></i> Novo</button>
+                                    <button class="componentes botoes btn btn-outline-primary " onClick={()=>history.push('/cadastrarUsuario')}> <i class="fas fa-user-plus"></i> Novo</button>
                                     <button class="componentes botoes btn btn-outline-primary "> <i class="fas fa-user-minus"></i> Remover</button>
                                     <button class="componentes botoes btn btn-outline-primary "><i class="fas fa-check"></i> Mudar Status</button>
                                 </section>
