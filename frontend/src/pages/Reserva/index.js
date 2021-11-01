@@ -24,7 +24,7 @@ export default function Reserva() {
                                 <section>
                                     <h3 class ="componentes botoes"> Reservas </h3>
                                 </section>
-    
+
                                 <section>
                                     <button class="componentes botoes btn btn-outline-primary "onClick={()=>history.push('/fazerReserva')}><i class="fas fa-user-plus"></i> Nova Reserva+</button>
                                 </section>

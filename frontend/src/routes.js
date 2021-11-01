@@ -22,19 +22,19 @@ export default function Routes(){
         <BrowserRouter>
             <Switch>
                 <Route exact path="/" component={Usuario}/>
-                <Route path='/Reserva' component={Reserva} />
-                <Route path='/Pet' component={Pet} />                
-                <Route path='/cadastrarPet ' component={cadastrarPet} />
-                <Route path='/cadastrarUsuario ' component={cadastrarUsuario} />
-                <Route path='/criarConta' component={criarConta} />
-                <Route path='/editarPerfil/:id' component={editarPerfil} />
-                <Route path='/editarPet/:id' component={editarPet} />
-                <Route path='/editarReserva/:id' component={editarReserva} />
-                <Route path='/editarReservaEmAndamento' component={editarReservaEmAndamento} />
-                <Route path='/fazerReserva' component={fazerReserva} />
+                <Route path='/reserva' component={Reserva} />
+                <Route path='/pet' component={Pet} />                
+                <Route path='/pet/cadastrar' component={cadastrarPet} />
+                <Route path='/usuario/cadastrar' component={cadastrarUsuario} />
+                <Route path='/conta/criar' component={criarConta} />
+                <Route path='/perfil/editar/:id' component={editarPerfil} />
+                <Route path='/pet/editar/:id' component={editarPet} />
+                <Route path='/reserva/editar/:id' component={editarReserva} />
+                <Route path='/reservaEmAndamento/editar' component={editarReservaEmAndamento} />
+                <Route path='/reserva/cadastrar' component={fazerReserva} />
                 <Route path='/login' component={login} />
-                <Route path='/verPet/:id' component={verPet} />
-                <Route path='/verReserva/:id' component={verReserva} />
+                <Route path='/pet/ver/:id' component={verPet} />
+                <Route path='/reserva/ver/:id' component={verReserva} />
 
             </Switch>
         </BrowserRouter>
