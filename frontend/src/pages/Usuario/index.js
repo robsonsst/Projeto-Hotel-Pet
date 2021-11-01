@@ -8,12 +8,12 @@ export default function Usuario() {
     const history=useHistory();
 
     return (
-        <Menu cachorro = 'viralata' >
+        <Menu>
             
             <div>
                 <div class=" col-sm-12">
 
-                    <hr></hr>
+                    <hr/>
 
                     <div class=" painel-componentes">
                         <div class="">

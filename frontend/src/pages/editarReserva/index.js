@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import './style.css';
+import Menu from '../barraLateral'
 
 export default function editarReserva() {
 

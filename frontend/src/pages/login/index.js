@@ -1,12 +1,12 @@
 import React, { useState, useEffect } from 'react';
 import './style.css';
-import Menu from '../barraLateral'
+
 
 export default function Usuario() {
 
     return (
 
-        <Menu>
+
             <div class=" col-sm-12">
 
                 <hr/>
@@ -16,7 +16,7 @@ export default function Usuario() {
                         <div class="container">
 
                             <div class="container-lado-esquerdo">
-                                <img src="imagens/pet-shop-login.jpg" alt="Imagem de login" width="1012" height="695" ></img>
+                                <img src="../../../../imagens/pet-shop-login.jpg" alt="Imagem de login" width="1012" height="695" ></img>
                             </div>
                 
                             <div class="container-lado-direito">
@@ -67,8 +67,6 @@ export default function Usuario() {
                 
                     </body>
                     
-                </div>
-
-            </Menu>           
+                </div>        
                 
     )}
