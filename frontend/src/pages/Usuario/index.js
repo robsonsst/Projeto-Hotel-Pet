@@ -28,7 +28,7 @@ export default function Usuario() {
                                 </section>
 
                                 <section>
-                                    <button class="componentes botoes btn btn-outline-primary " onClick={()=>history.push('/cadastrarUsuario')}> <i class="fas fa-user-plus"></i> Novo</button>
+                                    <button class="componentes botoes btn btn-outline-primary " onClick={()=>history.push('/usuario/cadastrar')}> <i class="fas fa-user-plus"></i> Novo</button>
                                     <button class="componentes botoes btn btn-outline-primary "> <i class="fas fa-user-minus"></i> Remover</button>
                                     <button class="componentes botoes btn btn-outline-primary "><i class="fas fa-check"></i> Mudar Status</button>
                                 </section>

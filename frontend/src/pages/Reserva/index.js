@@ -26,7 +26,7 @@ export default function Reserva() {
                                 </section>
 
                                 <section>
-                                    <button class="componentes botoes btn btn-outline-primary "onClick={()=>history.push('/fazerReserva')}><i class="fas fa-user-plus"></i> Nova Reserva+</button>
+                                    <button class="componentes botoes btn btn-outline-primary "onClick={()=>history.push('/reserva/cadastrar')}><i class="fas fa-user-plus"></i> Nova Reserva</button>
                                 </section>
 
                             </div>

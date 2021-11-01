@@ -27,7 +27,7 @@ export default function Pet() {
                                 </section>
     
                                 <section>
-                                    <button class="componentes botoes btn btn-outline-primary " onClick={()=>history.push('/cadastrarPet')}> <i class="fas fa-user-plus"></i> Novo Pet</button>
+                                    <button class="componentes botoes btn btn-outline-primary " onClick={()=>history.push('/pet/cadastrar')}> <i class="fas fa-user-plus"></i> Novo Pet</button>
                                 </section>
 
                             </div>

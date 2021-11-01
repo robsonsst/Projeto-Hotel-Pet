@@ -22,19 +22,19 @@ export default function Routes(){
         <BrowserRouter>
             <Switch>
                 <Route exact path="/" component={Usuario}/>
-                <Route path='/reserva' component={Reserva} />
-                <Route path='/pet' component={Pet} />                
-                <Route path='/pet/cadastrar' component={cadastrarPet} />
-                <Route path='/usuario/cadastrar' component={cadastrarUsuario} />
-                <Route path='/conta/criar' component={criarConta} />
-                <Route path='/perfil/editar/:id' component={editarPerfil} />
-                <Route path='/pet/editar/:id' component={editarPet} />
-                <Route path='/reserva/editar/:id' component={editarReserva} />
-                <Route path='/reservaEmAndamento/editar' component={editarReservaEmAndamento} />
-                <Route path='/reserva/cadastrar' component={fazerReserva} />
-                <Route path='/login' component={login} />
-                <Route path='/pet/ver/:id' component={verPet} />
-                <Route path='/reserva/ver/:id' component={verReserva} />
+                <Route exact path='/reserva' component={Reserva} />
+                <Route exact path='/pet' component={Pet} />                
+                <Route exact path='/pet/cadastrar' component={cadastrarPet} />
+                <Route exact path='/usuario/cadastrar' component={cadastrarUsuario} />
+                <Route exact path='/conta/criar' component={criarConta} />
+                <Route exact path='/perfil/editar/:id' component={editarPerfil} />
+                <Route exact path='/pet/editar/:id' component={editarPet} />
+                <Route exact path='/reserva/editar/:id' component={editarReserva} />
+                <Route exact path='/reservaEmAndamento/editar' component={editarReservaEmAndamento} />
+                <Route exact path='/reserva/cadastrar' component={fazerReserva} />
+                <Route exact path='/login' component={login} />
+                <Route exact path='/pet/ver/:id' component={verPet} />
+                <Route exact path='/reserva/ver/:id' component={verReserva} />
 
             </Switch>
         </BrowserRouter>
