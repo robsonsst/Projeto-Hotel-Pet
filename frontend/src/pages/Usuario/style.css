@@ -79,6 +79,13 @@ hr{
 }
 .div-tabela{
     padding-top: 1.0em;
+  
+}
+
+table {
+    display: block; /* important */
+    height: 150px;
+    overflow-y: scroll;
 }
 
 .div-botoes-pesquisa{
