@@ -14,9 +14,12 @@ import fazerReserva from './pages/fazerReserva';
 import login from './pages/login';
 import verPet from './pages/verPet';
 import verReserva from './pages/verReserva'
+import editarReservaFinalizada from './pages/editarReservaFinalizada'
+import configuracoes from './pages/configuracoes';
 
 
 export default function Routes(){
+
     return (
         
         <BrowserRouter>
@@ -33,8 +36,10 @@ export default function Routes(){
                 <Route exact path='/reservaEmAndamento/editar' component={editarReservaEmAndamento} />
                 <Route exact path='/reserva/cadastrar' component={fazerReserva} />
                 <Route exact path='/login' component={login} />
+                <Route exact path='/configuracoes' component={configuracoes} />
                 <Route exact path='/pet/ver/:id' component={verPet} />
                 <Route exact path='/reserva/ver/:id' component={verReserva} />
+                <Route exact path='/reservaFinalizada/editar' component={editarReservaFinalizada} />
 
             </Switch>
         </BrowserRouter>
