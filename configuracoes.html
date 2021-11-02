@@ -7,14 +7,13 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-F3w7mX95PdgyTmZZMECAngseQB83DfGTowi0iMjiWaeVhAn4FJkqJByhZMI3AhiU" crossorigin="anonymous">
 
-    <link rel="stylesheet" href="./css/stylesReservaEmAndamento.css">
+    <link rel="stylesheet" href="./css/stylesConfiguracoes.css">
 
 
     <script src="https://kit.fontawesome.com/5b7d87045e.js" crossorigin="anonymous" defer></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-/bQdsTh/da6pkI1MST/rWKFNjaCP5gBSY4sEBT38Q/9RBh9AH40zEOg7Hlq2THRZ" crossorigin="anonymous" defer></script>
 
-    <title>Editar Reserva em andamento</title>
-
+    <title>Configurações</title>
 
 </head>
 
@@ -44,8 +43,6 @@
 
                 </div>
 
-
-
                 <hr>
 
                 <div class=" painel-componentes">
@@ -53,68 +50,37 @@
                         <!-- div que contem o titulo home e os botoes de novo remover e mudar o status -->
 
                         <div class="titulo-pagina">
-                            <h5> Home/Reserva/Editar Reserva</h5>
+                            <h5> Home/Configurações</h5>
                         </div>
 
                         <div class="main">
 
                             <section>
-                                <h3 class="titulo-editar-reserva"> Editar Reserva </h3>
+                                <h3 class="titulo-configuracoes"> Configurações</h3>
                             </section>
 
                             <section class="section componentes">
-                                <label for="proprietario"> Proprietario*</label>
-                                <input id="proprietario" class="input" type="text">
+                                <label for="valorDiaria"> Valor da diária</label>
+                                <input id="valorDiaria" class="input" type="text">
 
-                                <label for="pet"> Pet*</label>
-                                <input id="pet" class="input" type="text">
-                            </section>
-
-                            <section class="section-data componentes">
-                                <label for="periodo"> Período*</label>
                                 <br>
-                                <input id="periodo" class="input-data" type="date">
-                                <input class="input-data" type="date">
+
+                                <label for="vagasDisponiveis"> Vagas disponíveis</label>
+                                <input id="vagasDisponiveis" class="input" type="text">
                             </section>
-
-                            <section class="section componentes">
-
-                                <label for="notas"> Notas</label>
-                                <textarea id="notas" class="input notas" rows="10" cols="30" maxlength="200"></textarea>
-
-                                <label for="select"> Status*</label>
-                                <select id="select" class=" input form-select-sm select-status" aria-label="Default select example-sm">
-                                        <option selected>Status</option>
-                                        <option value="2">Reservado</option>
-                                        <option value="1">Em andamento</option>
-                                        <option value="2">Cancelado</option>
-                                        <option value="2">Finalizado</option>
-                                    </select>
-
-                                <label for="anotacoes"> Anotações do Funcionario*</label>
-                                <textarea id="anotacoes" class="input notas" rows="10" cols="30" maxlength="200"></textarea>
-                            </section>
-
+                            <br>
+                            <br>
                             <div>
-                                <label class="componentes"> Total das diarias: <a>R$: 40,00 </a></label>
-                                <br>
-                                <button class="botoes botao-add componentes btn btn-outline-light"><i class="far fa-plus-square"></i></button>
-                                <br>
-                                <br>
                                 <button class="botoes componentes btn btn-primary"><i class="far fa-save"></i> Salvar</button>
                                 <button class="botoes componentes btn btn-outline-primary"> <i class="fas fa-redo"></i> Limpar</button>
                             </div>
 
                         </div>
 
-
-
                     </div>
 
                 </div>
             </div>
-
-
 
         </div>
 
