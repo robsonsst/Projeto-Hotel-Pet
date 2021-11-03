@@ -62,7 +62,6 @@ export default function Usuario() {
                                 <label>Criado em:
                                     <input class="componentes" type="date" ></input>
                                 </label>
-                                <input class="componentes" type="date" ></input>
 
                             </section>
 
