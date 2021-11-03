@@ -1,25 +1,42 @@
 import React, { useState, useEffect } from 'react';
 import api from '../../services/api'
+import { useHistory } from 'react-router-dom';
 import './style.css';
 import Menu from '../barraLateral'
 
-export default function cadastrarUsuario() {
+export default function CadastrarUsuario() {
     var data = new Date();
     var dia = String(data.getDate()).padStart(2, '0');
     var mes = String(data.getMonth() + 1).padStart(2, '0');
     var ano = data.getFullYear();
     var dataAtual = dia + '/' + mes + '/' + ano;
 
-    const initUser={
+    const history = useHistory();
 
-        nome: "",
-        sobrenome: "",
-        email: "",
-        telefone: "",
+    const initUser = {
+
+        nome: '',
+        sobrenome: '',
+        email: '',
+        telefone: '',
         criado_em: dataAtual
     }
 
-    const [usuario, setUsers] = useState(initUser);
+    const [usuario, setUser] = useState(initUser);
+
+    function onSubmit(ev) {
+        ev.preventDefault();
+        api.post('/usuario', usuario).then((response) => {
+            history.push('/')
+        })
+
+    }
+
+    function onChange(ev) {
+        const { id, value } = ev.target;
+        setUser({ ...usuario, [id]: value });
+        console.log(usuario);
+    }
 
     return (
 
@@ -41,33 +58,33 @@ export default function cadastrarUsuario() {
                             <section>
                                 <h3 class="titulo-cadastrar-usuario"> Cadastrar Usuário</h3>
                             </section>
-                            <form>
-                                <section class="section componentes">
+                            <form class="section componentes" onSubmit={onSubmit}>
 
-                                    <label for="usuario"> Email*</label>
-                                    <input id="usuario" class="input" type="text" placeholder="  joaodasilva@pet.com"></input>
 
-                                    <label for="usuario"> Nome*</label>
-                                    <input id="usuario" class="input" type="text" placeholder="  João"></input>
+                                <label for="email"> Email*</label>
+                                <input id="email" class="input" type="email" onChange={onChange} placeholder="joaodasilva@pet.com" value={usuario.email} />
 
-                                    <label for="usuario"> Sobrenome*</label>
-                                    <input id="usuario" class="input" type="text" placeholder="  da Silva"></input>
+                                <label for="nome"> Nome*</label>
+                                <input id="nome" class="input" type="text" onChange={onChange} placeholder="João" value={usuario.nome} />
 
-                                    <label for="usuario"> Telefone*</label>
-                                    <input id="usuario" class="input" type="tel" placeholder="  +55 (73) 99904-0302"></input>
+                                <label for="sobrenome"> Sobrenome*</label>
+                                <input id="sobrenome" class="input" type="text" onChange={onChange} placeholder="da Silva" value={usuario.sobrenome} />
 
-                                </section>
+                                <label for="telefone"> Telefone*</label>
+                                <input id="telefone" class="input" type="tel" onChange={onChange} placeholder="(73) 99904-0302" value={usuario.telefone} />
+
+
+
+                                <div>
+                                    <label class="componentes"><a> Foto </a></label>
+                                    <br></br>
+                                    <button class="botoes botao-add componentes btn btn-outline-light"><i class="far fa-plus-square"></i></button>
+                                    <br></br>
+                                    <br></br>
+                                    <button class="botoes componentes btn btn-primary" type="submit"  ><i class="far fa-save"></i> Salvar</button>
+                                    <button class="botoes componentes btn btn-outline-primary"  > <i class="fas fa-redo"></i>Limpar</button>
+                                </div>
                             </form>
-                            <div>
-                                <label class="componentes"><a> Foto </a></label>
-                                <br></br>
-                                <button class="botoes botao-add componentes btn btn-outline-light"><i class="far fa-plus-square"></i></button>
-                                <br></br>
-                                <br></br>
-                                <button class="botoes componentes btn btn-primary"><i class="far fa-save"></i> Salvar</button>
-                                <button class="botoes componentes btn btn-outline-primary"> <i class="fas fa-redo"></i>Limpar</button>
-                            </div>
-
                         </div>
 
                     </div>

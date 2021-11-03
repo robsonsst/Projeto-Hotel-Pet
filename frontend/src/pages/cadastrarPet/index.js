@@ -1,9 +1,37 @@
-import React from 'react';
+import React, {useState, useEffect} from 'react';
+import api from '../../services/api'
+import { useHistory} from "react-router-dom";
 import './style.css';
 import Menu from '../barraLateral'
 
 
-export default function cadastrarPet() {
+export default function CadastrarPet() {
+    
+    const history = useHistory();
+
+    const initUser={
+        proprietario: '',
+        nome: '',
+        tipo: '',
+        raça: '',
+        tamanho: ''
+    }
+    
+    const [usuario, setUser] = useState(initUser);
+
+    function onSubmit(ev) {
+        ev.preventDefault();
+        api.post('/pet', usuario).then((response) => {
+            history.push('/pet')
+        })
+
+    }
+
+    function onChange(ev) {
+        const { id, value } = ev.target;
+        setUser({ ...usuario, [id]: value });
+        console.log(usuario);
+    }
 
     return (
 
@@ -27,41 +55,41 @@ export default function cadastrarPet() {
 
                             </section>
 
-                            <section class="section componentes">
+                            <form class="section componentes" onSubmit = {onSubmit}>
+                                
                                 <label for="proprietario"> Proprietario*</label>
-                                <input id="proprietario" class="input" type="text"></input>
+                                <input id="proprietario" class="input" type="text" onChange={onChange} value={usuario.proprietario}></input>
 
                                 <label for="pet"> Nome*</label>
-                                <input id="pet" class="input" type="text"></input>
+                                <input id="nome" class="input" type="text" onChange={onChange} value={usuario.nome}></input>
 
-                                <label for="select"> Tipo*</label>
-                                <select id="select" class=" input form-select-sm select-status" aria-label="Default select example-sm">
+                                <label for="select">Tipo*</label>
+                                <select id="tipo"  onChange={onChange} value={usuario.tipo} class=" input form-select-sm select-status" aria-label="Default select example-sm">
                                     <option selected>Tipo</option>
                                     <option value="1">Gato</option>
                                     <option value="2">Cachorro</option>
                                 </select>
 
-                                <label for="pet"> Raça*</label>
-                                <input id="pet" class="input" type="text"></input>
+                                <label for="pet">Raça*</label>
+                                <input id="raça" class="input" type="text"onChange={onChange} value={usuario.raça}></input>
 
-                                <label for="select"> Tamanho*</label>
-                                <select id="select" class=" input form-select-sm select-status" aria-label="Default select example-sm">
+                                <label for="select">Tamanho*</label>
+                                <select id="tamanho"onChange={onChange} value={usuario.tamanho} class=" input form-select-sm select-status" aria-label="Default select example-sm">
                                     <option selected>Tamanho</option>
                                     <option value="1">Grande</option>
                                     <option value="2">Pequeno</option>
                                 </select>
 
-
-                            </section>
-
-
-
-                            <div>
-                                <br></br>
-                                <br></br>
-                                <button class="botoes componentes btn btn-primary"><i class="far fa-save"></i> Salvar</button>
-                                <button class="botoes componentes btn btn-outline-primary"> <i class="fas fa-redo"></i> Limpar</button>
-                            </div>
+                                <div>
+                                    <br></br>
+                                    <br></br>
+                                    
+                                    <button class="botoes componentes btn btn-primary" type="submit" 
+                                    ><i class="far fa-save"></i> Salvar</button>
+                                    
+                                    <button class="botoes componentes btn btn-outline-primary"  > <i class="fas fa-redo"></i>Limpar</button>
+                                </div>
+                           </form>
 
                         </div>
 
