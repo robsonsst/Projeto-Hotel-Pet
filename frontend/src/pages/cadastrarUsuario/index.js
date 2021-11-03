@@ -60,7 +60,7 @@ export default function CadastrarUsuario() {
                             </section>
                             <form class="section componentes" onSubmit={onSubmit}>
 
-
+                                
                                 <label for="email"> Email*</label>
                                 <input id="email" class="input" type="email" onChange={onChange} placeholder="joaodasilva@pet.com" value={usuario.email} />
 
@@ -78,12 +78,15 @@ export default function CadastrarUsuario() {
                                 <div>
                                     <label class="componentes"><a> Foto </a></label>
                                     <br></br>
-                                    <button class="botoes botao-add componentes btn btn-outline-light"><i class="far fa-plus-square"></i></button>
+                                    <button class="botoes botao-add componentes btn btn-outline-light" type='button' ><i class="far fa-plus-square"></i></button>
                                     <br></br>
                                     <br></br>
                                     <button class="botoes componentes btn btn-primary" type="submit"  ><i class="far fa-save"></i> Salvar</button>
-                                    <button class="botoes componentes btn btn-outline-primary"  > <i class="fas fa-redo"></i>Limpar</button>
+                                    <button class="botoes componentes btn btn-outline-primary" type='reset' onClick={() => history.push('/')} > <i class="fas fa-redo"></i>Limpar</button>
+                                    
                                 </div>
+
+                                
                             </form>
                         </div>
 
