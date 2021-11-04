@@ -28,6 +28,7 @@ export default function Usuario() {
 
                     <div class=" painel-componentes">
                         <div class="">
+                            <div class=""></div>
 
                             <div class="">
                                 <h5> Home/Usuários</h5>
@@ -106,17 +107,16 @@ export default function Usuario() {
 
                                     {usuario.map( user =>(
                                         <tr key={user.id}>
-                                            <th scope="row"><i class="fas fa-address-card"></i></th>
-                                            <td>{user.email}</td>
-                                            <td>{user.nome+" "+ user.sobrenome}</td>
-                                            <td>{user.funcao}</td>
-                                            <td>{user.status}</td>
-                                            <td>{user.criado_em}</td>
-                                            <td class="linha-funcoes">Editar</td>
-                                            <td class="linha-funcoes">Visualizar</td>
+                                        <th scope="row"><i class="fas fa-address-card"></i></th>
+                                        <td>{user.email}</td>
+                                        <td>{user.nome+" "+ user.sobrenome}</td>
+                                        <td>{user.funcao}</td>
+                                        <td>{user.status}</td>
+                                        <td>{user.criado_em}</td>
+                                        <td class="linha-funcoes">Editar</td>
+                                        <td class="linha-funcoes">Visualizar</td>
                                         </tr>
                                     ))}
-
 
                                 </tbody>
                             </table>

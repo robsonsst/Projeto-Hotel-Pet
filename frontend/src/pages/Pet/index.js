@@ -1,11 +1,21 @@
 import React, { useState, useEffect } from 'react';
+import api from '../../services/api'
 import { useHistory } from 'react-router-dom';
 import './style.css';
 import Menu from '../barraLateral'
 
 export default function Pet() {
 
-    const history=useHistory();
+    const history = useHistory();
+    const [pet, setUsers] = useState([]);
+
+    useEffect(() => {
+
+        api.get('pet').then(response => {
+            setUsers(response.data);
+        })
+        
+    }, [])
 
     return (
         <Menu>
@@ -75,25 +85,17 @@ export default function Pet() {
                                   </tr>
                                 </thead>
                                 <tbody>
-                                  <tr>
-                                    <td>123456789</td>
-                                    <td>Carlos Targaryan</td>
-                                    <td>Cachorro</td>
-                                    <td>Pastor Alemão</td>
-                                    <td>Grande</td>
-                                    <td class="linha-funcoes">Editar</td>
-                                    <td class="linha-funcoes">Visualizar</td>
-                                  </tr>
-                                  <tr>
-                                    <td>123456785</td>
-                                    <td>Josue Lannister</td>
-                                    <td>Gato</td>
-                                    <td>Sphynx</td>
-                                    <td>Pequeno</td>
-                                    <td class="linha-funcoes" cursor>Editar</td>
-                                    <td class="linha-funcoes">Visualizar</td>
-                                  </tr>
-                        
+                                    {pet.map( user =>(
+                                        <tr key={user.id}>
+                                            <th scope="row"><i class="fas fa-address-card"></i></th>
+                                            <td>{user.nome}</td>
+                                            <td>{user.tipo}</td>
+                                            <td>{user.raça}</td>
+                                            <td>{user.tamanho}</td>
+                                            <td class="linha-funcoes">Editar</td>
+                                            <td class="linha-funcoes">Visualizar</td>
+                                        </tr>
+                                    ))}                        
                                 </tbody>
                             </table>
     
