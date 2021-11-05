@@ -28,6 +28,7 @@ export default function Usuario() {
 
                     <div class=" painel-componentes">
                         <div class="">
+                            <div class=""></div>
 
                             <div class="">
                                 <h5> Home/Usuários</h5>
@@ -116,7 +117,6 @@ export default function Usuario() {
                                             <td class="linha-funcoes"><Link to={`/reserva/ver/${user.id}`}>Visualizar </Link></td>
                                         </tr>
                                     ))}
-
 
                                 </tbody>
                             </table>

@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import api from '../../services/api'
 import { useHistory } from 'react-router-dom';
 import './style.css';
 import Menu from '../barraLateral'
@@ -6,6 +7,15 @@ import Menu from '../barraLateral'
 export default function Reserva() {
 
     const history = useHistory();
+    const [reserva, setUsers] = useState([]);
+
+    useEffect(() => {
+
+        api.get('reserva').then(response => {
+            setUsers(response.data);
+        })
+        
+    }, [])
 
     return (
 
@@ -81,38 +91,21 @@ export default function Reserva() {
                                     <th scope="col">Total <i class="fas fa-arrow-down"></i> </th>
                                 </tr>
                             </thead>
-                            <tbody>
-                                <tr>
-                                    <td>123456789</td>
-                                    <td>Carlos Targaryan</td>
-                                    <td>20/03/1960</td>
-                                    <td>21/03/1960</td>
-                                    <td>Desativado</td>
-                                    <td>R$40,00</td>
-                                    <td class="linha-funcoes">Editar</td>
-                                    <td class="linha-funcoes">Visualizar</td>
-                                </tr>
-                                <tr>
-                                    <td>123456785</td>
-                                    <td>Josue Lannister</td>
-                                    <td>20/08/2001</td>
-                                    <td>20/08/2001</td>
-                                    <td>Ativo</td>
-                                    <td>R$45,00</td>
-                                    <td class="linha-funcoes" cursor>Editar</td>
-                                    <td class="linha-funcoes">Visualizar</td>
-                                </tr>
-                                <tr>
+                            <tbody class="">
+                                
+                                {reserva.map( user =>(
+                                    <tr key={user.id}>
+                                        <th scope="row"><i class="fas fa-address-card"></i></th>
+                                        <td>{user.proprietario}</td>
+                                        <td>{user.dataInicial}</td>
+                                        <td>{user.dataFinal}</td>
+                                        <td>{user.status}</td>
+                                        <td>{user.diaria}</td>
+                                        <td class="linha-funcoes">Editar</td>
+                                        <td class="linha-funcoes">Visualizar</td>
+                                    </tr>
+                                ))}
 
-                                    <td>0320131198</td>
-                                    <td>Larry the Bird</td>
-                                    <td>03/11/2013</td>
-                                    <td>20/08/2013</td>
-                                    <td>Ativo</td>
-                                    <td>R$40,00</td>
-                                    <td class="linha-funcoes">Editar</td>
-                                    <td class="linha-funcoes">Visualizar</td>
-                                </tr>
                             </tbody>
                         </table>
 

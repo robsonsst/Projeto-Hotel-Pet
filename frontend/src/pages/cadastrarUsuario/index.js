@@ -96,6 +96,7 @@ export default function CadastrarUsuario() {
                                     <br></br>
                                     <button class="botoes componentes btn btn-primary" type="submit"  ><i class="far fa-save"></i> Salvar</button>
                                     <button class="botoes componentes btn btn-outline-primary" type='button' onClick={ limparCampo}  > <i class="fas fa-redo"></i>Limpar</button>
+
                                 </div>
                             </form>
                         </div>

@@ -7,6 +7,7 @@ import Menu from '../barraLateral'
 
 export default function CadastrarPet() {
 
+
     const history = useHistory();
 
     const [usuario, setUsers] = useState([]);
@@ -32,6 +33,7 @@ export default function CadastrarPet() {
     function onSubmit(ev) {
         ev.preventDefault();
         api.post('/pet', pet).then((response) => {
+
             history.push('/pet')
         })
 
@@ -41,6 +43,7 @@ export default function CadastrarPet() {
         const { id, value } = ev.target;
         setUser({ ...pet, [id]: value });
         console.log(pet);
+
     }
 
     return (
@@ -70,7 +73,7 @@ export default function CadastrarPet() {
                                 <label for="proprietario"> Proprietario*</label>
 
                                 <select id="tamanho" onChange={onChange} class=" input form-select-sm select-status" aria-label="Default select example-sm">
-                                    {usuario.map(user => (   
+                                    {usuario.map(user => (
                                         <option value={user.nome}>{user.nome}</option>
                                     ))}
                                 </select>
@@ -82,6 +85,7 @@ export default function CadastrarPet() {
 
                                 <label for="tipo">Tipo*</label>
                                 <select id="tipo" onChange={onChange} value={pet.tipo} class=" input form-select-sm select-status" aria-label="Default select example-sm">
+
                                     <option selected>Tipo</option>
                                     <option value="Gato">Gato</option>
                                     <option value="Cachorro">Cachorro</option>
@@ -92,15 +96,7 @@ export default function CadastrarPet() {
 
                                 <label for="tamanho">Tamanho*</label>
                                 <select id="tamanho" onChange={onChange} value={pet.tamanho} class=" input form-select-sm select-status" aria-label="Default select example-sm">
-                                    <option selected>Tamanho</option>
-                                    <option value="Grande">Grande</option>
-                                    <option value="Pequeno">Pequeno</option>
-                                </select>
-
                                 <div>
-                                    <br></br>
-                                    <br></br>
-
                                     <button class="botoes componentes btn btn-primary" type="submit"
                                     ><i class="far fa-save"></i> Salvar</button>
 
