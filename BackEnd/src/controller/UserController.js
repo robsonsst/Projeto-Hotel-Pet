@@ -1,7 +1,6 @@
 const crypto = require('crypto');
 const connection = require('../dataBase/connection');
 
-
 module.exports = {
     async list(req, res) {
         const usuario = await connection('usuario').select('*');

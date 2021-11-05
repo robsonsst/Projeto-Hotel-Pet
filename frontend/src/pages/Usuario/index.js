@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import api from '../../services/api'
-import { useHistory } from 'react-router-dom';
+import { Link, useHistory } from 'react-router-dom';
 import './style.css';
 import Menu from '../barraLateral'
 
@@ -112,8 +112,8 @@ export default function Usuario() {
                                             <td>{user.funcao}</td>
                                             <td>{user.status}</td>
                                             <td>{user.criado_em}</td>
-                                            <td class="linha-funcoes">Editar</td>
-                                            <td class="linha-funcoes">Visualizar</td>
+                                            <td class="linha-funcoes"><Link to={`/perfil/editar/${user.id}`}>Editar </Link></td>
+                                            <td class="linha-funcoes"><Link to={`/reserva/ver/${user.id}`}>Visualizar </Link></td>
                                         </tr>
                                     ))}
 

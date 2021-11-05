@@ -1,3 +1,4 @@
+
 exports.up = function(knex) {
     return knex.schema.createTable('pet', function (table) {
         table.increments('id');

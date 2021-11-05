@@ -16,7 +16,7 @@ module.exports = {
     },
 
     async create(req, res) {
-        const { nome, tipo, raça, tamanho, imagemCaminho, idCliente } = req.body;
+        const { nome, tipo, raça, tamanho, imagemCaminho, idUsuario } = req.body;
 
         await connection('pet').insert({
 
@@ -25,14 +25,14 @@ module.exports = {
             raça,
             tamanho,
             imagemCaminho,
-            idCliente
+            idUsuario
         })
         return res.status(200).send();
     },
 
     async update(req, res) {
         const { id } = req.params;
-        const { nome, tipo, raça, tamanho, imagemCaminho, idCliente } = req.body;
+        const { nome, tipo, raça, tamanho, imagemCaminho, idUsuario } = req.body;
         await connection('pet').where('id', id).update({
 
             nome,
@@ -40,7 +40,7 @@ module.exports = {
             raça,
             tamanho,
             imagemCaminho,
-            idCliente
+            idUsuario
         })
         return res.status(204).send();
     },

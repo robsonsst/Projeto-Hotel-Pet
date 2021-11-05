@@ -19,7 +19,9 @@ export default function CadastrarUsuario() {
         sobrenome: '',
         email: '',
         telefone: '',
-        criado_em: dataAtual
+        status: 'ativo',
+        criado_em: dataAtual,
+        funcao:'cliente'
     }
 
     const [usuario, setUser] = useState(initUser);
@@ -37,6 +39,12 @@ export default function CadastrarUsuario() {
         setUser({ ...usuario, [id]: value });
         console.log(usuario);
     }
+
+    function limparCampo(){
+        
+        setUser(initUser);
+    }
+    
 
     return (
 
@@ -60,7 +68,7 @@ export default function CadastrarUsuario() {
                             </section>
                             <form class="section componentes" onSubmit={onSubmit}>
 
-                                
+
                                 <label for="email"> Email*</label>
                                 <input id="email" class="input" type="email" onChange={onChange} placeholder="joaodasilva@pet.com" value={usuario.email} />
 
@@ -72,21 +80,23 @@ export default function CadastrarUsuario() {
 
                                 <label for="telefone"> Telefone*</label>
                                 <input id="telefone" class="input" type="tel" onChange={onChange} placeholder="(73) 99904-0302" value={usuario.telefone} />
-
-
+                            
+                                <select id="funcao" class=" componentes form-select-sm select-status" aria-label="Default select example-sm" onChange={onChange} value={usuario.funcao}>
+                                    <option selected>Função</option>
+                                    <option value="cliente">Cliente</option>
+                                    <option value="gerente">Gerente</option>
+                                    <option value="funcionario">Funcionario</option>
+                                </select>
 
                                 <div>
                                     <label class="componentes"><a> Foto </a></label>
                                     <br></br>
-                                    <button class="botoes botao-add componentes btn btn-outline-light" type='button' ><i class="far fa-plus-square"></i></button>
+                                    <button class="botoes botao-add componentes btn btn-outline-light" type='button'><i class="far fa-plus-square"></i></button>
                                     <br></br>
                                     <br></br>
                                     <button class="botoes componentes btn btn-primary" type="submit"  ><i class="far fa-save"></i> Salvar</button>
-                                    <button class="botoes componentes btn btn-outline-primary" type='reset' onClick={() => history.push('/')} > <i class="fas fa-redo"></i>Limpar</button>
-                                    
+                                    <button class="botoes componentes btn btn-outline-primary" type='button' onClick={ limparCampo}  > <i class="fas fa-redo"></i>Limpar</button>
                                 </div>
-
-                                
                             </form>
                         </div>
 

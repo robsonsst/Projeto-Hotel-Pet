@@ -1,9 +1,47 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
+import api from '../../services/api'
+import { useHistory } from "react-router-dom";
 import './style.css';
 import Menu from '../barraLateral'
 
 
-export default function cadastrarPet() {
+export default function CadastrarPet() {
+
+    const history = useHistory();
+
+    const [usuario, setUsers] = useState([]);
+
+
+    const initPet = {
+        nome: '',
+        tipo: '',
+        raça: '',
+        tamanho: '',
+        imagemCaminho: ''
+    }
+    const [pet, setUser] = useState(initPet);
+
+    useEffect(() => {
+
+        api.get('usuario').then(response => {
+            setUsers(response.data);
+        })
+
+    }, [])
+
+    function onSubmit(ev) {
+        ev.preventDefault();
+        api.post('/pet', pet).then((response) => {
+            history.push('/pet')
+        })
+
+    }
+
+    function onChange(ev) {
+        const { id, value } = ev.target;
+        setUser({ ...pet, [id]: value });
+        console.log(pet);
+    }
 
     return (
 
@@ -27,41 +65,48 @@ export default function cadastrarPet() {
 
                             </section>
 
-                            <section class="section componentes">
+                            <form class="section componentes" onSubmit={onSubmit}>
+
                                 <label for="proprietario"> Proprietario*</label>
-                                <input id="proprietario" class="input" type="text"></input>
 
-                                <label for="pet"> Nome*</label>
-                                <input id="pet" class="input" type="text"></input>
+                                <select id="tamanho" onChange={onChange} class=" input form-select-sm select-status" aria-label="Default select example-sm">
+                                    {usuario.map(user => (   
+                                        <option value={user.nome}>{user.nome}</option>
+                                    ))}
+                                </select>
 
-                                <label for="select"> Tipo*</label>
-                                <select id="select" class=" input form-select-sm select-status" aria-label="Default select example-sm">
+
+
+                                <label for="nome"> Nome*</label>
+                                <input id="nome" class="input" type="text" onChange={onChange} value={pet.nome}></input>
+
+                                <label for="tipo">Tipo*</label>
+                                <select id="tipo" onChange={onChange} value={pet.tipo} class=" input form-select-sm select-status" aria-label="Default select example-sm">
                                     <option selected>Tipo</option>
-                                    <option value="1">Gato</option>
-                                    <option value="2">Cachorro</option>
+                                    <option value="Gato">Gato</option>
+                                    <option value="Cachorro">Cachorro</option>
                                 </select>
 
-                                <label for="pet"> Raça*</label>
-                                <input id="pet" class="input" type="text"></input>
+                                <label for="raça">Raça*</label>
+                                <input id="raça" class="input" type="text" onChange={onChange} value={pet.raça}></input>
 
-                                <label for="select"> Tamanho*</label>
-                                <select id="select" class=" input form-select-sm select-status" aria-label="Default select example-sm">
+                                <label for="tamanho">Tamanho*</label>
+                                <select id="tamanho" onChange={onChange} value={pet.tamanho} class=" input form-select-sm select-status" aria-label="Default select example-sm">
                                     <option selected>Tamanho</option>
-                                    <option value="1">Grande</option>
-                                    <option value="2">Pequeno</option>
+                                    <option value="Grande">Grande</option>
+                                    <option value="Pequeno">Pequeno</option>
                                 </select>
 
+                                <div>
+                                    <br></br>
+                                    <br></br>
 
-                            </section>
+                                    <button class="botoes componentes btn btn-primary" type="submit"
+                                    ><i class="far fa-save"></i> Salvar</button>
 
-
-
-                            <div>
-                                <br></br>
-                                <br></br>
-                                <button class="botoes componentes btn btn-primary"><i class="far fa-save"></i> Salvar</button>
-                                <button class="botoes componentes btn btn-outline-primary"> <i class="fas fa-redo"></i> Limpar</button>
-                            </div>
+                                    <button class="botoes componentes btn btn-outline-primary"  > <i class="fas fa-redo"></i>Limpar</button>
+                                </div>
+                            </form>
 
                         </div>
 
