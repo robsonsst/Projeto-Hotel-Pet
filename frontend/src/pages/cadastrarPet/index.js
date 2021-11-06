@@ -95,7 +95,7 @@ export default function CadastrarPet() {
                                 <input id="raça" class="input" type="text" onChange={onChange} value={pet.raça}></input>
 
                                 <label for="tamanho">Tamanho*</label>
-                                <select id="tamanho" onChange={onChange} value={pet.tamanho} class=" input form-select-sm select-status" aria-label="Default select example-sm">
+                                <select id="tamanho" onChange={onChange} value={pet.tamanho} class=" input form-select-sm select-status" aria-label="Default select example-sm"></select>
                                 <div>
                                     <button class="botoes componentes btn btn-primary" type="submit"
                                     ><i class="far fa-save"></i> Salvar</button>
