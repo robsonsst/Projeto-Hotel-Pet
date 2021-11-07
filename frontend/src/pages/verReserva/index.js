@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React from 'react';
 import './style.css';
 import Menu from '../barraLateral'
 
@@ -45,12 +45,12 @@ export default function verReserva() {
                                     <p id="anotacao-funcionario" class="paragrafo"> Copo furadis é disculpa de bebadis, arcu quam euismod magna. </p>
                                 </div>
 
-                                <label class="label"> <a> Imagens: </a></label>
+                                <label class="label"> <p> Imagens: </p></label>
                                  <button class="botoes botao-add btn btn-outline-light"><i class="far fa-plus-square"></i></button>
 
                                     <label class="label"> Status: <button class="botoes btn btn-light">Finalizado</button>  </label>
 
-                                    <label class="label"> total das diarias: <a class="paragrafo">R$: 40,00 </a></label>
+                                    <label class="label"> total das diarias: <p class="paragrafo">R$: 40,00 </p></label>
 
                                     <label class="label"> Recibo: <p class = "paragrafo"><i class="fas fa-paperclip"></i>recibo.pdf</p></label>
 

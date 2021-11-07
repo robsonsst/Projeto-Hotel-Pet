@@ -15,7 +15,8 @@ import verPet from './pages/verPet';
 import verReserva from './pages/verReserva'
 import editarReservaFinalizada from './pages/editarReservaFinalizada'
 import configuracoes from './pages/configuracoes';
-import Login from './components/User';
+import UserLogin from './components/User/Login/Login';
+
 
 
 export default function Routes(){
@@ -35,7 +36,7 @@ export default function Routes(){
                 <Route exact path='/reserva/editar/:id' component={editarReserva} />
                 <Route exact path='/reservaEmAndamento/editar' component={editarReservaEmAndamento} />
                 <Route exact path='/reserva/cadastrar' component={fazerReserva} />
-                <Route exact path='/login' component={Login} />
+                <Route exact path='/login' component={UserLogin} />
                 <Route exact path='/configuracoes' component={configuracoes} />
                 <Route exact path='/pet/ver/:id' component={verPet} />
                 <Route exact path='/reserva/ver/:id' component={verReserva} />
