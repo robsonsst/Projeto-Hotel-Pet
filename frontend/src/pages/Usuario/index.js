@@ -6,9 +6,20 @@ import Menu from '../barraLateral'
 
 
 export default function Usuario() {
+    
+    const initUser = {
+
+        id: '',
+        email: '',
+        status: '',
+        criado_em: '',
+        nome: '',
+        funcao:''
+    }
 
     const history = useHistory();
     const [usuario, setUsers] = useState([]);
+    const [user, setUser] = useState(initUser);
 
     useEffect(() => {
 
@@ -17,6 +28,16 @@ export default function Usuario() {
         })
 
     }, [])
+
+    function onChange(ev) {
+        const { id, value } = ev.target;
+        setUser({ ...user, [id]: value });
+        console.log(user);
+    }
+
+    function limparCampo(){  
+        setUser(initUser);
+    }
 
     return (
         <Menu>
@@ -58,34 +79,34 @@ export default function Usuario() {
 
                         <div class=" div-inputs">
                             <section>
-                                <input class="componentes" placeholder="ID"></input>
+                                <input class="componentes"id="id" onChange={onChange} placeholder="ID" value={user.id}></input>
 
                                 <label>Criado em:
-                                    <input class="componentes" type="date" ></input>
+                                    <input class="componentes" id="criado_em" onChange={onChange} type="date" value={user.criado_em} ></input>
                                 </label>
 
                             </section>
 
                             <section>
-                                <input class="componentes" type="email" placeholder="exemple@gmail.com"></input>
-                                <input class="componentes" type="text" placeholder="João da silva"></input>
+                                <input class="componentes" id="email" onChange={onChange} type="email" placeholder="exemple@gmail.com" value={user.email}></input>
+                                <input class="componentes" id="nome" onChange={onChange} type="text" placeholder="João da silva" value={user.nome}></input>
                             </section>
 
                             <section>
                                 <select class=" componentes form-select-sm select-status" aria-label="Default select example-sm">
                                     <option selected>Status</option>
-                                    <option value="1">Ativo</option>
-                                    <option value="2">Desativado</option>
+                                    <option value="ativado">Ativo</option>
+                                    <option value="desativado">Desativado</option>
                                 </select>
 
 
-                                <input class="componentes" placeholder="Função"></input>
+                                <input class="componentes" id="funcao" onChange={onChange} placeholder="Função" value={user.funcao}></input>
                             </section>
 
                             <div class=" div-botoes-pesquisa">
 
-                                <button class="botoes btn btn-outline-primary"><i class="fas fa-search"></i> Pesquisar</button>
-                                <button class="botoes btn btn-outline-primary"> <i class="fas fa-redo"></i> Limpar</button>
+                                <button class="botoes btn btn-outline-primary" type="submit"><i class="fas fa-search"></i> Pesquisar</button>
+                                <button class="botoes btn btn-outline-primary" type="button" onClick={ limparCampo} > <i class="fas fa-redo"></i> Limpar</button>
 
                             </div>
 

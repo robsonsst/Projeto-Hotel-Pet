@@ -18,7 +18,8 @@ export default function CadastrarPet() {
         tipo: '',
         raça: '',
         tamanho: '',
-        imagemCaminho: ''
+        imagemCaminho: '',
+        idUsuario: ''
     }
     const [pet, setUser] = useState(initPet);
 
@@ -32,6 +33,7 @@ export default function CadastrarPet() {
 
     function onSubmit(ev) {
         ev.preventDefault();
+
         api.post('/pet', pet).then((response) => {
 
             history.push('/pet')
@@ -72,9 +74,9 @@ export default function CadastrarPet() {
 
                                 <label for="proprietario"> Proprietario*</label>
 
-                                <select id="tamanho" onChange={onChange} class=" input form-select-sm select-status" aria-label="Default select example-sm">
+                                <select id="idUsuario" onChange={onChange} class=" input form-select-sm select-status" aria-label="Default select example-sm">
                                     {usuario.map(user => (
-                                        <option value={user.nome}>{user.nome}</option>
+                                        <option value={user.id}>{user.nome}</option>
                                     ))}
                                 </select>
 
@@ -96,11 +98,17 @@ export default function CadastrarPet() {
 
                                 <label for="tamanho">Tamanho*</label>
                                 <select id="tamanho" onChange={onChange} value={pet.tamanho} class=" input form-select-sm select-status" aria-label="Default select example-sm">
+                                    <option selected>Tamanho</option>
+                                    <option value="pegueno">Pequeno</option>
+                                    <option value="medio">Medio</option>
+                                    <option value="grande">Grande</option>
+                                </select>
+
                                 <div>
                                     <button class="botoes componentes btn btn-primary" type="submit"
                                     ><i class="far fa-save"></i> Salvar</button>
 
-                                    <button class="botoes componentes btn btn-outline-primary"  > <i class="fas fa-redo"></i>Limpar</button>
+                                    <button class="botoes componentes btn btn-outline-primary" type='button'  > <i class="fas fa-redo"></i>Limpar</button>
                                 </div>
                             </form>
 

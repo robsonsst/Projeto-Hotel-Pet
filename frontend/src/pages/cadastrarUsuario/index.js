@@ -37,7 +37,7 @@ export default function CadastrarUsuario() {
     function onChange(ev) {
         const { id, value } = ev.target;
         setUser({ ...usuario, [id]: value });
-        console.log(usuario);
+        
     }
 
     function limparCampo(){

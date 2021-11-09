@@ -7,7 +7,7 @@ exports.up = function(knex) {
         table.string('raça');
         table.enu('tamanho', ['pegueno', 'medio', 'grande']);
         table.string('imagemCaminho');
-        table.integer('idUsuario').references('id').inTable('usuario');
+        table.integer('idUsuario').references('id').inTable('usuario').notNullable();
         
       })
 
