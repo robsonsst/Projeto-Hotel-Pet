@@ -1,38 +1,59 @@
-import React, { useState, useEffect } from 'react';
-import './style.css';
 
-export default function Login() {
+import React, { useState, useContext } from 'react';
+import { useHistory } from 'react-router-dom';
+import StoreContext from '../../Store/Context';
+import './Login.css';
 
+function initialState() {
+    return {
+        user: '',
+        password: ''
+    }
+}
 
-    function initialState() {
-        return {
-            login: '',
-            password: ''
-        }
+function login({user, password}){
+    if(user === 'admin' && password === 'admin'){
+        return {token: '1234'};
+    }
+    return {error: 'Usuário ou senha inválidos'};
+}
+
+const UserLogin = () => {
+    const [values, setValues] = useState(initialState);
+    const {setToken} = useContext(StoreContext);
+    const history = useHistory();
+
+    function onChange(ev) {
+
+        const { value, name } = ev.target;
+
+        setValues({
+            ...values, 
+            [name]:value,
+        })
     }
 
-    const UserLogin = () => {
-        const [values, setValues] = useState(initialState);
+    function onSubmit(ev){
+        ev.preventDefault();
 
-        function onChange(ev) {
+        const {token} = login(values);
 
-            const { value, name } = ev.target;
-
-            setValues({
-                ...values, 
-                [name]:value,
-            })
+        if(token){
+            setToken(token);
+            return history.push('/');
         }
+
+        setValues(initialState);
     }
 
     return (
 
         <div class=" col-sm-12" >
 
-            <hr/>
+            
             <body>
 
-                <form>
+                <form onSubmit = {onSubmit}>
                     <div class="container" >
 
                         <div class="container-lado-esquerdo" >
@@ -47,7 +68,7 @@ export default function Login() {
 
                             <div class="login-senha-enviar" >
 
-                                <input id="login-newsletter" name="login" type="login" class="form-newsletter__campo" onChange={onChange} value={values.login}
+                                <input id="login-newsletter" name="user" type="user" class="form-newsletter__campo" onChange={onChange} value={values.user}
                                 placeholder="Login" > </input>
 
                                 <div class="password-container" >
@@ -61,7 +82,7 @@ export default function Login() {
                                 <span > Mantenha - me conectado </span> 
                                                         
                                 <div id="esqueceu-senha" >
-                                    <a href="#" > Esqueceu sua senha ? </a> 
+                                    <a href="#"> Esqueceu sua senha ? </a> 
                                 </div>
                                 
                                 <button id="botao-enviar" > Enviar </button> 
@@ -69,8 +90,9 @@ export default function Login() {
                                 
                                 <section class="links-container">
                                     
-                                    <a href="#" class="fb BTN" > <i class="fa fa-facebook fa-fw" > </i> </a> <a href="#" class="twitter BTN" > <i class="fab fa-twitter fa-fw" > </i>  </a> 
-                                    <a href="#" class="google BTN" > <i class="fa fa-google fa-fw" > </i> </a> 
+                                    <a href="#" class="fb BTN"> <i class="fa fa-facebook fa-fw" > </i> </a> 
+                                    <a href="#" class="twitter BTN"> <i class="fab fa-twitter fa-fw" > </i>  </a> 
+                                    <a href="#" class="google BTN"> <i class="fa fa-google fa-fw" > </i> </a> 
                                     
                                 </section> 
                                 
@@ -83,5 +105,7 @@ export default function Login() {
                 </form>
             </body>
         </div>
-    )
-}
+    );
+};
+
+export default UserLogin;
