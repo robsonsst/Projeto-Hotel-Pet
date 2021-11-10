@@ -8,7 +8,7 @@ export default function FazerReserva() {
 
     const history = useHistory();
 
-    const initUser = {
+    const initReserva = {
 
         pet: '',
         dataInicial:'',
@@ -16,19 +16,24 @@ export default function FazerReserva() {
         notas: '',
     }
 
-    const [usuario, setUser] = useState(initUser);
+    const [reserva, setUser] = useState(initReserva);
 
     function onSubmit(ev) {
         ev.preventDefault();
-        api.post('/reserva', usuario).then((response) => {
+        api.post('/reserva', reserva).then((response) => {
             history.push('/reserva')
         })
     }
 
     function onChange(ev) {
         const { id, value } = ev.target;
-        setUser({ ...usuario, [id]: value });
-        console.log(usuario);
+        setUser({ ...reserva, [id]: value });
+        console.log(reserva);
+    }
+
+    function limparCampo(){
+        
+        setUser(initReserva);
     }
 
     return (
@@ -56,21 +61,21 @@ export default function FazerReserva() {
                                     <section class="section componentes">
                                         <br></br> 
                                         <label for="pet"> Pet*</label>
-                                        <input id="pet" class="input" type="text" onChange={onChange} value={usuario.pet}></input>
+                                        <input id="pet" class="input" type="text" onChange={onChange} value={reserva.pet}></input>
                                     </section>
 
                                     <section class="section-data componentes">
                                         <br></br> 
                                         <label for="periodo"> Período*</label>
                                         <br></br> 
-                                        <input id="dataInicial" class="input-data" type="date" onChange={onChange} value={usuario.dataInicial}></input>
-                                        <input id="dataFinal" class="input-data" type="date" onChange={onChange} value={usuario.dataFinal}></input>
+                                        <input id="dataInicial" class="input-data" type="date" onChange={onChange} value={reserva.dataInicial}></input>
+                                        <input id="dataFinal" class="input-data" type="date" onChange={onChange} value={reserva.dataFinal}></input>
                                     </section>
 
                                     <section class="section componentes">
                                         <br></br> 
                                         <label for="notas"> Notas</label>
-                                        <textarea id="notas" class="input notas" rows="10" cols="30" maxlength="200" onChange={onChange} value={usuario.notas}></textarea>
+                                        <textarea id="notas" class="input notas" rows="10" cols="30" maxlength="200" onChange={onChange} value={reserva.notas}></textarea>
 
                                     </section>
 
@@ -81,7 +86,7 @@ export default function FazerReserva() {
                                         <br></br>       
 
                                         <button class="botoes componentes btn btn-primary" type="submit"><i class="far fa-save"></i> Salvar</button>
-                                        <button class="botoes componentes btn btn-outline-primary"> <i class="fas fa-redo"></i>Limpar</button>
+                                        <button class="botoes componentes btn btn-outline-primary" type='button' onClick={ limparCampo}  > <i class="fas fa-redo"></i>Limpar</button>
                                     </div>
 
                                 </form>

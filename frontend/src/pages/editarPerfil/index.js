@@ -1,8 +1,8 @@
 import React, { useState, useEffect } from 'react';
 import { useHistory, useParams } from 'react-router-dom';
 import './style.css';
-import Menu from '../barraLateral'
-import api from '../../services/api'
+import Menu from '../barraLateral';
+import api from '../../services/api';
 
 
 export default function EditarPerfil() {
