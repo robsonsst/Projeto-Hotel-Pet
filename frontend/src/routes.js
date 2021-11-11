@@ -7,15 +7,16 @@ import cadastrarPet from './pages/cadastrarPet';
 import cadastrarUsuario from './pages/cadastrarUsuario';
 import criarConta from './pages/criarConta';
 import editarPerfil from './pages/editarPerfil';
+import editarPet from './pages/editarPet';
 import editarReserva from './pages/editarReserva';
 import editarReservaEmAndamento from './pages/editarReservaEmAndamento';
 import fazerReserva from './pages/fazerReserva';
+// import login from './pages/login';
 import verPet from './pages/verPet';
 import verReserva from './pages/verReserva'
 import editarReservaFinalizada from './pages/editarReservaFinalizada'
 import configuracoes from './pages/configuracoes';
 import UserLogin from './components/User/Login/Login';
-import EditarPet from './pages/editarPet';
 
 
 
@@ -32,7 +33,7 @@ export default function Routes(){
                 <Route exact path='/usuario/cadastrar' component={cadastrarUsuario} />
                 <Route exact path='/conta/criar' component={criarConta} />
                 <Route exact path='/perfil/editar/:id' component={editarPerfil} />
-                <Route exact path='/pet/editar/:id' component={EditarPet} />
+                <Route exact path='/pet/editar/:id' component={editarPet} />
                 <Route exact path='/reserva/editar/:id' component={editarReserva} />
                 <Route exact path='/reservaEmAndamento/editar' component={editarReservaEmAndamento} />
                 <Route exact path='/reserva/cadastrar' component={fazerReserva} />
