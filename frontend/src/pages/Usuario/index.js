@@ -5,6 +5,7 @@ import './style.css';
 import Menu from '../barraLateral'
 
 
+
 export default function Usuario() {
     
     const initUser = {
@@ -18,7 +19,7 @@ export default function Usuario() {
     }
 
     const history = useHistory();
-    const [usuario, setUsers] = useState([]);
+    const [usuarios, setUsers] = useState([]);
     const [user, setUser] = useState(initUser);
 
     useEffect(() => {
@@ -29,11 +30,38 @@ export default function Usuario() {
 
     }, [])
 
+    useEffect( ()=>{
+
+        api.get(`usuario/${user.id}`).then(response => {
+            setUser(response.data);
+        })
+
+    }, [])
+
+    function onSubmit(ev) {
+        ev.preventDefault();
+        api.post('/usuario/pesquisa', user).then((response) => {
+            setUsers(response.data)
+        })
+    }
+
     function onChange(ev) {
         const { id, value } = ev.target;
         setUser({ ...user, [id]: value });
-        console.log(user);
     }
+
+    async function handleDelete(id){
+
+        try{
+            await api.delete(`/usuario/${id}`)
+            setUsers(usuarios.filter(user=> user.id != id))
+
+        }catch(err){
+            
+            alert('erro ao deletar');
+        }
+    }
+
 
     function limparCampo(){  
         setUser(initUser);
@@ -62,7 +90,7 @@ export default function Usuario() {
 
                                 <section>
                                     <button class="componentes botoes btn btn-outline-primary " onClick={() => history.push('/usuario/cadastrar')}> <i class="fas fa-user-plus"></i> Novo</button>
-                                    <button class="componentes botoes btn btn-outline-primary "> <i class="fas fa-user-minus"></i> Remover</button>
+                                    <button class="componentes botoes btn btn-outline-primary " onClick={()=> handleDelete(usuarios.map(user=> user.id)) }   > <i class="fas fa-user-minus"></i> Remover</button>
                                     <button class="componentes botoes btn btn-outline-primary "><i class="fas fa-check"></i> Mudar Status</button>
                                 </section>
 
@@ -77,7 +105,7 @@ export default function Usuario() {
 
                         </div>
 
-                        <div class=" div-inputs">
+                        <form onSubmit={onSubmit} class=" div-inputs">
                             <section>
                                 <input class="componentes"id="id" onChange={onChange} placeholder="ID" value={user.id}></input>
 
@@ -93,7 +121,7 @@ export default function Usuario() {
                             </section>
 
                             <section>
-                                <select class=" componentes form-select-sm select-status" aria-label="Default select example-sm">
+                                <select class=" componentes form-select-sm select-status" aria-label="Default select example-sm" id="status" onChange={onChange} value={user.status}>
                                     <option selected>Status</option>
                                     <option value="ativado">Ativo</option>
                                     <option value="desativado">Desativado</option>
@@ -110,7 +138,7 @@ export default function Usuario() {
 
                             </div>
 
-                        </div>
+                        </form>
 
                         <div class="div-tabela">
                             <table class="table table-striped table-hover">
@@ -126,7 +154,7 @@ export default function Usuario() {
                                 </thead>
                                 <tbody class="">
 
-                                    {usuario.map( user =>(
+                                    {usuarios.map( user =>(
                                         <tr key={user.id}>
                                             <th scope="row"><i class="fas fa-address-card"></i></th>
                                             <td>{user.email}</td>

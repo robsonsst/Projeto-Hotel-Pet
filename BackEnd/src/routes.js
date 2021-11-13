@@ -15,6 +15,8 @@ routes.get('/usuario', UserController.list)
 
 routes.get('/usuario/:id', UserController.show)
 
+routes.post('/usuario/pesquisa', UserController.search)
+
 routes.post('/usuario', UserController.create)
 
 routes.put('/usuario/:id', UserController.update)
