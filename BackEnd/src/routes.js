@@ -29,6 +29,8 @@ routes.get('/pet', PetController.list)
 
 routes.get('/pet/:id', PetController.show)
 
+routes.post('/pet/pesquisa', PetController.search)
+
 routes.post('/pet', PetController.create)
 
 routes.put('/pet/:id', PetController.update)

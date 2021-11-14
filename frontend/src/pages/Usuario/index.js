@@ -116,7 +116,7 @@ export default function Usuario() {
                             </section>
 
                             <section>
-                                <input class="componentes" id="email" onChange={onChange} type="email" placeholder="exemple@gmail.com" value={user.email}></input>
+                                <input class="componentes" id="email" onChange={onChange} type="text" placeholder="exemple@gmail.com" value={user.email}></input>
                                 <input class="componentes" id="nome" onChange={onChange} type="text" placeholder="João da silva" value={user.nome}></input>
                             </section>
 

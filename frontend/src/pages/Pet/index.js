@@ -1,21 +1,48 @@
 import React, { useState, useEffect } from 'react';
 import api from '../../services/api'
-import { useHistory } from 'react-router-dom';
+import { Link, useHistory } from 'react-router-dom';
 import './style.css';
 import Menu from '../barraLateral'
 
 export default function Pet() {
 
+    const initPet = {
+
+        nome: '',
+        tipo: '',
+        raça: '',
+        tamanho: ''
+    }
+
     const history = useHistory();
-    const [pet, setUsers] = useState([]);
+    const [pets, setPets] = useState([]);
+    const [pet, setPet] = useState(initPet);
+
 
     useEffect(() => {
 
         api.get('pet').then(response => {
-            setUsers(response.data);
+            setPets(response.data);
         })
         
     }, [])
+
+    function onSubmit(ev) {
+        ev.preventDefault();
+        api.post('/pet/pesquisa', pet).then((response) => {
+            setPets(response.data)
+        })
+    }
+
+    function onChange(ev) {
+        const { id, value } = ev.target;
+        setPet({ ...pet, [id]: value });
+        console.log(pet)
+    }
+
+    function limparCampo(){  
+        setPet(initPet);
+    }
 
     return (
         <Menu>
@@ -45,32 +72,31 @@ export default function Pet() {
     
                         </div>
     
-                        <div class=" div-inputs"> 
+                        <form onSubmit={onSubmit} class=" div-inputs"> 
                             
-                            
-
                             <section>
-                                <input class="componentes" placeholder="ID"></input>
+                                <input id="nome" class="componentes" onChange={onChange} placeholder="Nome" value={pet.nome}  ></input>
                             </section>
         
                             <section>
-                                <input class="componentes" type="text" placeholder="João da silva"></input>
+                                <input id="tipo" class="componentes" onChange={onChange} type="text" placeholder="Tipo" value={pet.tipo} ></input>
                             </section>
         
                             <section>
-                                <input class="componentes" type="text" placeholder="Raça"></input>
+                                <input id="raça" class="componentes" onChange={onChange} type="text" placeholder="Raça" value={pet.raça} ></input>
         
-                                <input class="componentes" placeholder="Tamanho"></input>
+                                <input id="tamanho" class="componentes" onChange={onChange} placeholder="Tamanho" value={pet.tamanho} ></input>
                             </section>
     
                             <div class=" div-botoes-pesquisa">
     
-                                <button class="botoes btn btn-outline-primary"><i class="fas fa-search"></i> Pesquisar</button>
-                                <button class="botoes btn btn-outline-primary"> <i class="fas fa-redo"></i> Limpar</button>
+                                <button class="botoes btn btn-outline-primary" type="submit" ><i class="fas fa-search"></i> Pesquisar</button>
+                                <button class="botoes btn btn-outline-primary"type="button" onClick={ limparCampo} > <i class="fas fa-redo"></i> Limpar</button>
         
                             </div>
     
-                        </div>
+                        </form>
+                        
                         <div class="div-tabela">
                             <table class="table table-striped table-hover ">
                                 <thead class="linha-tabela">
@@ -85,15 +111,15 @@ export default function Pet() {
                                   </tr>
                                 </thead>
                                 <tbody>
-                                    {pet.map( user =>(
-                                        <tr key={user.id}>
+                                    {pets.map( pet =>(
+                                        <tr key={pet.id}>
                                             <th scope="row"><i class="fas fa-address-card"></i></th>
-                                            <td>{user.nome}</td>
-                                            <td>{user.tipo}</td>
-                                            <td>{user.raça}</td>
-                                            <td>{user.tamanho}</td>
-                                            <td class="linha-funcoes">Editar</td>
-                                            <td class="linha-funcoes">Visualizar</td>
+                                            <td>{pet.nome}</td>
+                                            <td>{pet.tipo}</td>
+                                            <td>{pet.raça}</td>
+                                            <td>{pet.tamanho}</td>
+                                            <td class="linha-funcoes"><Link to={`/pet/editar/${pet.id}`}>Editar </Link></td>
+                                            <td class="linha-funcoes"><Link to={`/pet/ver/${pet.id}`}>Visualizar </Link></td>
                                         </tr>
                                     ))}                        
                                 </tbody>

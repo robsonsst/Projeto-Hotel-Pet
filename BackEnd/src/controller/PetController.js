@@ -15,6 +15,18 @@ module.exports = {
         return res.json(pet);
     },
 
+    async search(req, res){
+        const { nome, tipo, raça, tamanho} = req.body
+        const pet = await connection('pet')
+            .where('nome', 'like', `${nome || ''}%`)
+            .where('tipo', 'like', `%${tipo || ''}%`)
+            .where('raça', 'like', `%${raça || ''}%`)
+            .where('tamanho', 'like', `%${tamanho || ''}%`)
+            .select('*');
+
+        return res.json(pet);
+    },
+
     async create(req, res) {
         const { nome, tipo, raça, tamanho, imagemCaminho, idUsuario } = req.body;
 
