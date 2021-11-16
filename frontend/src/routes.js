@@ -11,12 +11,11 @@ import editarPet from './pages/editarPet';
 import editarReserva from './pages/editarReserva';
 import editarReservaEmAndamento from './pages/editarReservaEmAndamento';
 import fazerReserva from './pages/fazerReserva';
-// import login from './pages/login';
 import verPet from './pages/verPet';
 import verReserva from './pages/verReserva'
 import editarReservaFinalizada from './pages/editarReservaFinalizada'
 import configuracoes from './pages/configuracoes';
-import UserLogin from './components/User/Login/Login';
+import UserLogin from './components/User/Login/Login.jsx';
 
 
 

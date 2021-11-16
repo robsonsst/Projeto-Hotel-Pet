@@ -60,7 +60,7 @@ const UserLogin = () => {
                             <img src="../../../../imagens/pet-shop-login.jpg"
                                 alt="Imagem de login"
                                 width="1012"
-                                height="695" > </img> 
+                                height="695" />
                         </div>
 
                         <div class="container-lado-direito" >
@@ -69,23 +69,23 @@ const UserLogin = () => {
                             <div class="login-senha-enviar" >
 
                                 <input id="login-newsletter" name="user" type="user" class="form-newsletter__campo" onChange={onChange} value={values.user}
-                                placeholder="Login" > </input>
+                                placeholder="Login" />
 
                                 <div class="password-container" >
                                     <input type="password" id="field-password" name="password" class="field-password" onChange={onChange} value={values.password}
-                                    placeholder="Senha" > </input> 
+                                    placeholder="Senha" />
                                     <i class="fas fa-eye" id="eye" onclick="showPassword()" > </i> <i class="fas fa-eye-slash " id="eye-slash" onclick="showPassword()" > </i> 
                                 </div> 
                                 <input type="checkbox"
-                                    id="manter-conectado" > 
-                                </input> 
+                                    id="manter-conectado" /> 
+                            
                                 <span > Mantenha - me conectado </span> 
                                                         
                                 <div id="esqueceu-senha" >
                                     <a href="#"> Esqueceu sua senha ? </a> 
                                 </div>
                                 
-                                <button id="botao-enviar" > Enviar </button> 
+                                <button id="botao-enviar" onclick={()=>history.push('/')} > Enviar </button> 
                                 <h2 > < span id="ou"> ou </span></h2>
                                 
                                 <section class="links-container">

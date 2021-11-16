@@ -1,8 +1,53 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
+import { useHistory, useParams } from 'react-router-dom';
+import api from '../../services/api'
 import './style.css';
 import Menu from '../barraLateral'
 
-export default function editarPet() {
+export default function EditarPet() {
+
+    const { id } = useParams();
+    const history = useHistory();
+
+    const initPet = {
+
+        nome: '',
+        tipo: '',
+        raça: '',
+        tamanho: ''
+    }
+
+    const [pets, setPets] = useState(initPet);
+
+    useEffect(() => {
+        if (id) {
+            api.get(`/pet/${id}`).then(response => {
+                setPets(...response.data);
+            })
+        }
+
+    }, []);
+
+    function onSubmit(ev) {
+        ev.preventDefault();
+        const method = id ? 'put' :'post';
+        const url = id ? `/pet/${id}`: '/pet';
+
+        api[method](url, pets).then((response) => {
+            history.push('/pet')
+        })
+
+    }
+
+    function onChange(ev) {
+        const { id, value } = ev.target;
+        setPets({ ...pets, [id]: value });
+    }
+
+    function limparCampo() {
+
+        setPets(initPet);
+    }
 
     return (
 
@@ -17,7 +62,7 @@ export default function editarPet() {
                             <h5> Home/Pet/Editar Pet</h5>
                         </div>
 
-                        <div class="main">
+                        <form onSubmit={onSubmit} class="main">
 
                             <section>
                                 
@@ -30,24 +75,24 @@ export default function editarPet() {
                             <section class="section componentes">
 
                                
-                                <label for="pet"> Nome*</label>
-                                <input id="pet" class="input" type="text"></input>
+                                <label for="nome"> Nome*</label>
+                                <input id="nome" class="input" onChange={onChange} value={pets.nome} type="text"></input>
                                 
-                                <label for="select"> Tipo*</label>
-                                <select id="select" class=" input form-select-sm select-status" aria-label="Default select example-sm">
+                                <label for="tipo"> Tipo*</label>
+                                <select id="tipo" class=" input form-select-sm select-status" onChange={onChange} value={pets.tipo} aria-label="Default select example-sm">
                                     <option selected>Tipo</option>
-                                    <option value="1">Gato</option>
-                                    <option value="2">Cachorro</option>
+                                    <option value="gato">Gato</option>
+                                    <option value="cachorro">Cachorro</option>
                                 </select>
                               
-                                <label for="pet"> Raça*</label>
-                                <input id="pet" class="input" type="text"></input>
+                                <label for="raça"> Raça*</label>
+                                <input id="raça" class="input" onChange={onChange} value={pets.raça} type="text"></input>
                              
-                                <label for="select"> Tamanho*</label>
-                                <select id="select" class=" input form-select-sm select-status" aria-label="Default select example-sm">
+                                <label for="tamanho"> Tamanho*</label>
+                                <select id="tamanho" class=" input form-select-sm select-status" onChange={onChange} value={pets.tamanho} aria-label="Default select example-sm">
                                     <option selected>Tamanho</option>
-                                    <option value="1">Grande</option>
-                                    <option value="2">Pequeno</option>
+                                    <option value="grande">Grande</option>
+                                    <option value="pegueno">Pequeno</option>
                                 </select>
 
 
@@ -57,11 +102,11 @@ export default function editarPet() {
 
                             <div>
                                 
-                                <button class="botoes componentes btn btn-primary"><i class="far fa-save"></i> Salvar</button>
-                                <button class="botoes componentes btn btn-outline-primary"> <i class="fas fa-redo"></i> Limpar</button>
+                                <button class="botoes componentes btn btn-primary" type='submit'><i class="far fa-save"></i> Salvar</button>
+                                <button class="botoes componentes btn btn-outline-primary" type='button' onClick={limparCampo}> <i class="fas fa-redo"></i> Limpar</button>
                             </div>
 
-                        </div>
+                        </form>
 
                     </div>
 

@@ -94,12 +94,6 @@ export default function Usuario() {
                                     <button class="componentes botoes btn btn-outline-primary "><i class="fas fa-check"></i> Mudar Status</button>
                                 </section>
 
-                                <section>
-                                    <label class="componentes botoes">Visualizar Por:</label>
-                                    <button class="componentes botoes btn btn-outline-danger">Usuário</button>
-                                    <button class="componentes botoes btn btn-outline-primary">Função</button>
-
-                                </section>
                             </div>
 
 
