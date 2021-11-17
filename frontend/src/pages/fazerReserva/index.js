@@ -1,34 +1,73 @@
-import React, { useState} from 'react';
-import api from '../../services/api'
+import React, { useState, useEffect } from 'react';
+import api from '../../services/api';
 import { useHistory } from 'react-router-dom';
 import './style.css';
-import Menu from '../barraLateral'
+import Menu from '../barraLateral';
 
 export default function FazerReserva() {
 
+    var data = new Date();
+    var dia = String(data.getDate()).padStart(2, '0');
+    var mes = String(data.getMonth() + 1).padStart(2, '0');
+    var ano = data.getFullYear();
+    var dataAtual = dia + '/' + mes + '/' + ano;
+
     const history = useHistory();
 
-    const initUser = {
+    const initReserva = {
 
-        pet: '',
         dataInicial:'',
         dataFinal:'',
         notas: '',
+        notasFuncionario: "sem valor",
+        idPet: '',
+        idUsuario: '',
+        notasFuncionario: '',
+        status: 'reservado',
+        diaria: 10.0,
+        criacaoReserva: dataAtual,
+        atualizacaoReserva: dataAtual,
+        reciboCaminho: '',
+        proprietario: 'sem valor'
     }
 
-    const [usuario, setUser] = useState(initUser);
+    const [reserva, setReserva] = useState(initReserva);
+    
+    const [pet, setPets] = useState([]);
+
+    const [usuario, setUsers] = useState([]);
+
+    useEffect(() => {
+
+        api.get('usuario').then(response => {
+            setUsers(response.data);
+        })
+
+    }, [])
+
+    useEffect(() => {
+
+        api.get('pet').then(response => {
+            setPets(response.data);
+        })
+
+    }, [])
 
     function onSubmit(ev) {
         ev.preventDefault();
-        api.post('/reserva', usuario).then((response) => {
+        api.post('/reserva', reserva).then((response) => {
             history.push('/reserva')
         })
     }
 
     function onChange(ev) {
         const { id, value } = ev.target;
-        setUser({ ...usuario, [id]: value });
-        console.log(usuario);
+        setReserva({ ...reserva, [id]: value });
+        console.log(reserva)
+    }
+
+    function limparCampo(){  
+        setReserva(initReserva);
     }
 
     return (
@@ -55,33 +94,41 @@ export default function FazerReserva() {
                             
                                     <section class="section componentes">
                                         <br></br> 
-                                        <label for="pet"> Pet*</label>
-                                        <input id="pet" class="input" type="text" onChange={onChange} value={usuario.pet}></input>
+                                        <label for="idPet"> Pet*</label>
+                                        <select id="idPet" onChange={onChange} class=" input form-select-sm select-status" aria-label="Default select example-sm">
+                                            {pet.map(pet => (
+                                                <option value={pet.id}>{pet.nome}</option>
+                                            ))}
+                                        </select>
+                                        <br/>
+                                        
+                                        <label for="idUsuario"> Proprietario*</label>
+                                        <select id="idUsuario" onChange={onChange} class=" input form-select-sm select-status" aria-label="Default select example-sm">
+                                            {usuario.map(user => (
+                                                <option value={user.id}>{user.nome}</option>
+                                            ))}
+                                        </select>
+
                                     </section>
 
                                     <section class="section-data componentes">
-                                        <br></br> 
                                         <label for="periodo"> Período*</label>
                                         <br></br> 
-                                        <input id="dataInicial" class="input-data" type="date" onChange={onChange} value={usuario.dataInicial}></input>
-                                        <input id="dataFinal" class="input-data" type="date" onChange={onChange} value={usuario.dataFinal}></input>
+                                        <input id="dataInicial" class="input-data" type="date" onChange={onChange} value={reserva.dataInicial}></input>
+                                        <input id="dataFinal" class="input-data" type="date" onChange={onChange} value={reserva.dataFinal}></input>
                                     </section>
 
                                     <section class="section componentes">
-                                        <br></br> 
+                                      
                                         <label for="notas"> Notas</label>
-                                        <textarea id="notas" class="input notas" rows="10" cols="30" maxlength="200" onChange={onChange} value={usuario.notas}></textarea>
+                                        <textarea id="notas" class="input notas" rows="10" cols="30" maxlength="200" onChange={onChange} value={reserva.notas}></textarea>
 
                                     </section>
 
-                                    <div>
-                                        <br></br> 
-                                        <label class="componentes"> total das diarias: <a> R$: 40,00 </a></label> 
-                                        <br></br> 
-                                        <br></br>       
+                                    <div>    
 
                                         <button class="botoes componentes btn btn-primary" type="submit"><i class="far fa-save"></i> Salvar</button>
-                                        <button class="botoes componentes btn btn-outline-primary"> <i class="fas fa-redo"></i>Limpar</button>
+                                        <button class="botoes componentes btn btn-outline-primary" onClick={ limparCampo} > <i class="fas fa-redo"></i>Limpar</button>
                                     </div>
 
                                 </form>

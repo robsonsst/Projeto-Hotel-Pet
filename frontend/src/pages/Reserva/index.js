@@ -93,14 +93,15 @@ export default function Reserva() {
                             </thead>
                             <tbody class="">
                                 
-                                {reserva.map( user =>(
-                                    <tr key={user.id}>
+                                {reserva.map( reserv =>(
+                                    <tr key={reserv.id}>
+                                        
                                         <th scope="row"><i class="fas fa-address-card"></i></th>
-                                        <td>{user.proprietario}</td>
-                                        <td>{user.dataInicial}</td>
-                                        <td>{user.dataFinal}</td>
-                                        <td>{user.status}</td>
-                                        <td>{user.diaria}</td>
+                                        <td>{reserv.idPet}</td>
+                                        <td>{reserv.dataInicial}</td>
+                                        <td>{reserv.dataFinal}</td>
+                                        <td>{reserv.status}</td>
+                                        <td>{reserv.diaria}</td>
                                         <td class="linha-funcoes">Editar</td>
                                         <td class="linha-funcoes">Visualizar</td>
                                     </tr>
