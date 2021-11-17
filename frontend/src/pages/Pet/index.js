@@ -106,7 +106,7 @@ export default function Pet() {
                                     <th scope="col">Nome <i class="fas fa-arrow-down"></i> </th>
                                     <th scope="col">Tipo <i class="fas fa-arrow-down"></i> </th>
                                     <th scope="col">Raça <i class="fas fa-arrow-down"></i> </th>
-                                    <th scope="col">Tamano <i class="fas fa-arrow-down"></i> </th>
+                                    <th scope="col">Tamanho <i class="fas fa-arrow-down"></i> </th>
                                    
                                   </tr>
                                 </thead>

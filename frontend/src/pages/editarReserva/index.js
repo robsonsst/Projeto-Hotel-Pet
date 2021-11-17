@@ -1,8 +1,56 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
+import { useHistory, useParams } from 'react-router-dom';
+import api from '../../services/api'
 import './style.css';
 import Menu from '../barraLateral'
 
-export default function editarReserva() {
+export default function EditarReserva() {
+    
+    const { id } = useParams();
+    const history = useHistory();
+
+    const initReserva = {
+        
+        pet: '',
+        chegada: '',
+        partida: '',
+        status: '',
+        total: ''
+    }
+
+    const [reservas, setReservas] = useState(initReserva);
+
+    useEffect(() => {
+        if (id) {
+            api.get(`/reserva/${id}`).then(response => {
+                setReservas(...response.data);
+            })
+        }
+
+    }, []);
+
+    function onSubmit(ev) {
+        
+        ev.preventDefault();
+        const method = id ? 'put' :'post';
+        const url = id ? `/reserva/${id}`: '/reserva';
+
+        api[method](url, reservas).then((response) => {
+            history.push('/reserva')
+        })
+
+    }
+
+    function onChange(ev) {
+
+        const { id, value } = ev.target;
+        setReservas({ ...reservas, [id]: value });
+    }
+
+    function limparCampo() {
+
+        setReservas(initReserva);
+    }
 
     return (
 
@@ -17,34 +65,36 @@ export default function editarReserva() {
                                 <h5> Home/Reserva/Editar Reserva</h5>
                             </div>
     
-                            <div class="main">
+                            <form onSubmit={onSubmit} class="main">
                                 
                                 <section>
                                     <h3 class ="titulo-editar-reserva"> Editar Reserva </h3>
                                 </section>
 
                                 <section class="section componentes">
-                                    <label for="proprietario"> Proprietario*</label>
-                                    <input id="proprietario" class="input" type="text"></input>
+
+                                    <label for="idUsuario"> Proprietario*</label>
+                                    <input class="input" type="text"></input>
 
                                     <label for="pet"> Pet*</label>
-                                    <input id="pet" class="input" type="text"></input>
+                                    <input id="pet" class="input" onChange={onChange} value={reservas.pet} type="text"></input>
                                 </section>
 
                                 <section class="section-data componentes">
                                     <label for="periodo"> Período*</label>
                                     <br></br>
-                                    <input id="periodo" class="input-data" type="date"></input>
-                                    <input class="input-data" type="date"></input>
+                                    <input class="componentes" id="chegada" type="date" onChange={onChange} value={reservas.chegada}></input>
+                                    
+                                    <input class="componentes" id="partida" type="date" onChange={onChange} value={reservas.partida}></input>
                                 </section>
 
                                 <section class="section componentes">
 
                                     <label for="notas"> Notas</label>
-                                    <textarea id="notas" class="input notas" rows="10" cols="30" maxlength="200"></textarea>
+                                    <textarea id="notas" class="input notas" rows="10" cols="30" maxlength="200" onChange={onChange} value={reservas.notas}></textarea>
 
                                     <label for="select"> Status*</label>
-                                    <select id="select" class=" input form-select-sm select-status" aria-label="Default select example-sm">
+                                    <select class=" input form-select-sm select-status" aria-label="Default select example-sm" id="status" onChange={onChange} value={reservas.status}>
                                         <option selected>Status</option>
                                         <option value="2">Reservado</option>
                                         <option value="1">Em andamento</option>
@@ -57,21 +107,20 @@ export default function editarReserva() {
                                 </section>
 
                                 <div>
-                                    <label class="componentes"> total das diarias: <a>R$: 40,00 </a></label> 
+                                    <label class="componentes"> total das diarias: <a>R$: 10,00 </a></label> 
                                     <br></br>
                                     <br></br>                        
-                                    <button class="botoes componentes btn btn-primary"><i class="far fa-save"></i> Salvar</button>
-                                    <button class="botoes componentes btn btn-outline-primary"> <i class="fas fa-redo"></i> Limpar</button>
+                                    <button class="botoes componentes btn btn-primary" type="submit"><i class="far fa-save"></i> Salvar</button>
+                                    <button class="botoes componentes btn btn-outline-primary" onClick={ limparCampo} > <i class="fas fa-redo"></i>Limpar</button>
                                 </div>
                                 
-                            </div>
+                            </form>
                             
                         </div>
                         
                     </div>
 
                 </div>
-        
         </Menu>
-
-    )}
+    )
+}
