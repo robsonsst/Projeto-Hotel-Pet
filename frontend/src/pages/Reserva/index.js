@@ -9,7 +9,8 @@ export default function Reserva() {
     const initReserva = {
 
         id: '',
-        pet: '',
+        idUsuario: '',
+        idPet: '',
         chegada: '',
         partida: '',
         status: '',
@@ -19,7 +20,6 @@ export default function Reserva() {
     const history = useHistory();
     const [reservas, setReservas] = useState([]);
     const [reserva, setReserva] = useState(initReserva);
-
 
     useEffect(() => {
 
@@ -75,43 +75,42 @@ export default function Reserva() {
 
                         <section>
 
-                            <input class="componentes"id="id" onChange={onChange} placeholder="ID" value={reserva.id}></input>
+                            <input class="componentes" id="id" placeholder="ID" onChange={onChange} value={reserva.id}></input>
                             
                             <label>Período:
-
-                                <input class="componentes" id="chegada" type="date" onChange={onChange} value={reserva.chegada}></input>
-                                                                
-                            </label>
+                                <input class="componentes" id="chegada" type="date" onChange={onChange} value={reserva.chegada}></  input> 
+                            </label>                             
                             
-                            <input class="componentes" id="partida" type="date" onChange={onChange} value={reserva.partida}></input>
-
+                            <input class="componentes" id="partida" type="date" onChange={onChange} value={reserva.partida}></input>   
+                                                                                    
                         </section>
 
                         <section>
-                            <input class="componentes" type="text" placeholder="João da silva"></input>
+                            <input class="componentes" id="idUsuario" type="text" placeholder="João da silva" onChange={onChange} value={reserva.idUsuario}></input>
 
                             <label>Total:
                                 <input class="componentes" type="number" min="0.00" max="10000.00" step="0.01" placeholder="R$ 0,00" id = "total" onChange={onChange} value={reserva.total}></input>
                             </label>
-                            
-                            <input class="componentes" type="number" min="0.00" max="10000.00" step="0.01" placeholder="R$ 0,00"></input>
+                                                        
                         </section>
 
                         <section>
                             <select class=" componentes form-select-sm select-status" aria-label="Default select example-sm" id="status" onChange={onChange} value={reserva.status}>
                                 <option selected>Status</option>
-                                <option value="ativado">Ativo</option>
-                                <option value="desativado">Desativado</option>
+                                <option value="reservado">Reservado</option>
+                                <option value="em andamento">Em andamento</option>
+                                <option value="finalizada">Finalizado</option>
                             </select>
 
-                            <input class="componentes"id="pet" onChange={onChange} placeholder="Pet" value={reserva.pet}></input>
+                            <input class="componentes"id="idPet" onChange={onChange} placeholder="Pet" value={reserva.idPet}></input>
                             
                         </section>
 
                         <div class=" div-botoes-pesquisa">
 
-                                <button class="botoes btn btn-outline-primary" type="submit" ><i class="fas fa-search"></i> Pesquisar</button>
-                                <button class="botoes btn btn-outline-primary"type="button" onClick={ limparCampo} > <i class="fas fa-redo"></i> Limpar</button>
+                            <button class="botoes btn btn-outline-primary" type="submit" ><i class="fas fa-search"></i> Pesquisar</button>
+                            
+                            <button class="botoes btn btn-outline-primary"type="button" onClick={ limparCampo} > <i class="fas fa-redo"></i> Limpar</button>
 
                         </div>
 

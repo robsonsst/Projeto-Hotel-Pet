@@ -33,9 +33,7 @@ export default function EditarReserva() {
     }
 
     const [reserva, setReserva] = useState(initReserva);
-    
     const [pet, setPets] = useState([]);
-
     const [usuario, setUsers] = useState([]);
 
     useEffect(() => {
