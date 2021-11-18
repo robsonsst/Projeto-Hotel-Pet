@@ -125,9 +125,7 @@ export default function VerReserva() {
                                     <label class="label"> Chegada em: <p class = "paragrafo">{reservas.dataInicial}</p></label>
 
                             </section>
-
-                            <button class="btn-voltar btn btn-outline-primary"><i class="fas fa-arrow-left"></i>  Voltar</button>
-
+                            
                             <button class="btn-<button btn-voltar btn btn-outline-primary" onClick={()=>{ history.push('/reserva')}}><i class="fas fa-arrow-left"></i>  Voltar</button>
 
 

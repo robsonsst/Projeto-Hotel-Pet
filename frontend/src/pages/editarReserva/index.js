@@ -6,26 +6,60 @@ import Menu from '../barraLateral'
 
 export default function EditarReserva() {
     
+    var data = new Date();
+    var dia = String(data.getDate()).padStart(2, '0');
+    var mes = String(data.getMonth() + 1).padStart(2, '0');
+    var ano = data.getFullYear();
+    var dataAtual = dia + '/' + mes + '/' + ano;
+
     const { id } = useParams();
     const history = useHistory();
 
     const initReserva = {
         
-        pet: '',
-        chegada: '',
-        partida: '',
+        dataInicial:'',
+        dataFinal:'',
+        notas: '',
+        notasFuncionario: "sem valor",
+        idPet: '',
+        idUsuario: '',
+        notasFuncionario: '',
         status: '',
-        total: ''
+        diaria: 10.0,
+        criacaoReserva: dataAtual,
+        atualizacaoReserva: dataAtual,
+        reciboCaminho: '',
+        proprietario: 'sem valor'
     }
 
-    const [reservas, setReservas] = useState(initReserva);
+    const [reserva, setReserva] = useState(initReserva);
+    
+    const [pet, setPets] = useState([]);
+
+    const [usuario, setUsers] = useState([]);
 
     useEffect(() => {
         if (id) {
             api.get(`/reserva/${id}`).then(response => {
-                setReservas(...response.data);
+                setReserva(...response.data);
             })
         }
+
+    }, []);
+
+    useEffect(() => {
+        
+        api.get(`/usuario`).then(response => {
+            setUsers(...response.data);
+        })
+
+    }, []);
+
+    useEffect(() => {
+        
+        api.get(`/pet`).then(response => {
+            setPets(...response.data);
+        })
 
     }, []);
 
@@ -35,7 +69,7 @@ export default function EditarReserva() {
         const method = id ? 'put' :'post';
         const url = id ? `/reserva/${id}`: '/reserva';
 
-        api[method](url, reservas).then((response) => {
+        api[method](url, reserva).then((response) => {
             history.push('/reserva')
         })
 
@@ -44,12 +78,12 @@ export default function EditarReserva() {
     function onChange(ev) {
 
         const { id, value } = ev.target;
-        setReservas({ ...reservas, [id]: value });
+        setReserva({ ...reserva, [id]: value });
     }
 
     function limparCampo() {
 
-        setReservas(initReserva);
+        setReserva(initReserva);
     }
 
     return (
@@ -73,37 +107,52 @@ export default function EditarReserva() {
 
                                 <section class="section componentes">
 
-                                    <label for="idUsuario"> Proprietario*</label>
-                                    <input class="input" type="text"></input>
+                                    <label for="idPet"> Pet*</label>
+                                        
+                                    <select id="idPet" onChange={onChange} class=" input form-select-sm select-status" aria-label="Default select example-sm">
+                                        
+                                        <option value={pet.id}>{pet.nome}</option>
+                                        
+                                    </select>
+                                    <br/> 
 
-                                    <label for="pet"> Pet*</label>
-                                    <input id="pet" class="input" onChange={onChange} value={reservas.pet} type="text"></input>
+                                    <label for="idUsuario"> Proprietario*</label>
+                                        
+                                    <select id="idUsuario" onChange={onChange} class=" input form-select-sm select-status" aria-label="Default select example-sm">
+                                       <option value={usuario.id}>{usuario.nome}</option>
+                                    </select>
+                                    
                                 </section>
 
                                 <section class="section-data componentes">
-                                    <label for="periodo"> Período*</label>
-                                    <br></br>
-                                    <input class="componentes" id="chegada" type="date" onChange={onChange} value={reservas.chegada}></input>
                                     
-                                    <input class="componentes" id="partida" type="date" onChange={onChange} value={reservas.partida}></input>
+                                    <label for="periodo"> Período*</label>
+                                    <br></br> 
+                                    
+                                    <input id="dataInicial" class="input-data" type="date" onChange={onChange} value={reserva.dataInicial}></input>
+                                    <input id="dataFinal" class="input-data" type="date" onChange={onChange} value={reserva.dataFinal}></input>
+
                                 </section>
 
                                 <section class="section componentes">
 
                                     <label for="notas"> Notas</label>
-                                    <textarea id="notas" class="input notas" rows="10" cols="30" maxlength="200" onChange={onChange} value={reservas.notas}></textarea>
+                                    
+                                    <textarea id="notas" class="input notas" rows="10" cols="30" maxlength="200" onChange={onChange} value={reserva.notas}></textarea>
 
                                     <label for="select"> Status*</label>
-                                    <select class=" input form-select-sm select-status" aria-label="Default select example-sm" id="status" onChange={onChange} value={reservas.status}>
+                                    <select class=" input form-select-sm select-status" aria-label="Default select example-sm" id="status" onChange={onChange} value={reserva.status}>
+
                                         <option selected>Status</option>
-                                        <option value="2">Reservado</option>
-                                        <option value="1">Em andamento</option>
-                                        <option value="2">Cancelado</option>
-                                        <option value="2">Finalizado</option>
+                                        
+                                        <option value="reservado">Reservado</option>
+                                        <option value="em andamento">Em andamento</option>
+                                        <option value="finalizada">Finalizado</option>
+
                                     </select>
 
                                     <label for="anotacoes"> Anotações do Funcionario*</label>
-                                    <textarea id="anotacoes" class="input notas" rows="10" cols="30" maxlength="200"></textarea>
+                                    <textarea id="anotacoes" class="input notas" rows="10" cols="30" maxlength="200" onChange={onChange} value={reserva.notasFuncionario}></textarea>
                                 </section>
 
                                 <div>
